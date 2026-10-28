@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "resident@inanimate": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "inanimate": {
+      "source": {
+        "source": "github",
+        "repo": "inanimate-tech/agent-plugins"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Improv sim</title>
+    <link rel="stylesheet" href="/panel.css" />
+  </head>
+  <body>
+    <main class="bench">
+      <div class="chassis">
+        <canvas id="lcd" width="135" height="240"></canvas>
+        <div class="buttons">
+          <button class="pbtn" data-index="0" title="Button 0 — restart"></button>
+          <button class="pbtn sq" data-index="1" title="Button 1 — pause/resume"></button>
+        </div>
+      </div>
+
+      <aside class="rail">
+        <section class="block">
+          <h2>Mixer</h2>
+          <div class="chan">
+            <span id="ch0-name">ch0 narration</span><i class="meter"><b id="ch0-bar"></b></i>
+          </div>
+          <div class="chan">
+            <span id="ch1-name">ch1 sfx @40%</span><i class="meter sfx"><b id="ch1-bar"></b></i>
+          </div>
+          <p class="dim">master <span id="volume">255</span>/255</p>
+        </section>
+
+        <section class="block">
+          <h2>Clock</h2>
+          <p><span id="fps">0.0</span> fps &middot; dt <span id="dt">0</span>ms</p>
+          <p>frames <span id="frames">0</span></p>
+          <p id="stall" class="warn hidden">! <span id="stall-n">0</span> unpreloaded play(s)</p>
+        </section>
+
+        <section class="block">
+          <h2>Transport</h2>
+          <div class="transport">
+            <button id="restart" title="Button 0">&#8635;</button>
+            <button id="freeze" title="Freeze the simulator (not a device button)">&#10052;</button>
+          </div>
+          <p class="dim" id="ident">&mdash;</p>
+        </section>
+
+        <section class="block grow">
+          <h2>Serial</h2>
+          <ol id="serial"></ol>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="/panel.js"></script>
+  </body>
+</html>

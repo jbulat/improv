@@ -1,0 +1,9 @@
+# Prettier formats the TypeScript and JavaScript, and the sim panel's HTML and
+# CSS. The tools write the JSON themselves, and the docs keep their own layout.
+*.json
+*.md
+*.yml
+fixtures/
+device-apps/
+device/.pio/
+tools/lib/gfx-font-data.ts

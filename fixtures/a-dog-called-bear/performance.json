@@ -1,0 +1,485 @@
+{
+  "schema_version": 2,
+  "id": "perf_a_dog_called_bear",
+  "title": "A Dog Called Bear",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "marisol",
+      "display_name": "Marisol",
+      "actor": "rosa",
+      "voice": "tts_bright_young",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "poppy",
+      "display_name": "Poppy",
+      "actor": "ada",
+      "voice": "tts_mid_warm",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "dad",
+      "display_name": "Dad",
+      "actor": "milo",
+      "voice": "tts_mid_earnest",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "bear",
+      "display_name": "Bear",
+      "actor": "pip",
+      "voice": "tts_high_quick",
+      "default_expression": "happy"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "neutral": "flash://actors/miss_moon/expr/neutral",
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted",
+          "giggling": "flash://actors/miss_moon/expr/giggling",
+          "curious": "flash://actors/miss_moon/expr/curious",
+          "surprised": "flash://actors/miss_moon/expr/surprised",
+          "sad": "flash://actors/miss_moon/expr/sad",
+          "sleepy": "flash://actors/miss_moon/expr/sleepy",
+          "yawning": "flash://actors/miss_moon/expr/yawning"
+        }
+      },
+      {
+        "id": "bruno",
+        "base_uri": "flash://actors/bruno/base",
+        "expressions": {
+          "neutral": "flash://actors/bruno/expr/neutral",
+          "happy": "flash://actors/bruno/expr/happy",
+          "sad": "flash://actors/bruno/expr/sad",
+          "surprised": "flash://actors/bruno/expr/surprised",
+          "angry": "flash://actors/bruno/expr/angry",
+          "scared": "flash://actors/bruno/expr/scared"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy",
+          "sad": "flash://actors/milo/expr/sad",
+          "surprised": "flash://actors/milo/expr/surprised",
+          "angry": "flash://actors/milo/expr/angry",
+          "scared": "flash://actors/milo/expr/scared"
+        }
+      },
+      {
+        "id": "ada",
+        "base_uri": "flash://actors/ada/base",
+        "expressions": {
+          "neutral": "flash://actors/ada/expr/neutral",
+          "happy": "flash://actors/ada/expr/happy",
+          "sad": "flash://actors/ada/expr/sad",
+          "surprised": "flash://actors/ada/expr/surprised",
+          "angry": "flash://actors/ada/expr/angry",
+          "scared": "flash://actors/ada/expr/scared"
+        }
+      },
+      {
+        "id": "rosa",
+        "base_uri": "flash://actors/rosa/base",
+        "expressions": {
+          "neutral": "flash://actors/rosa/expr/neutral",
+          "happy": "flash://actors/rosa/expr/happy",
+          "sad": "flash://actors/rosa/expr/sad",
+          "surprised": "flash://actors/rosa/expr/surprised",
+          "angry": "flash://actors/rosa/expr/angry",
+          "scared": "flash://actors/rosa/expr/scared"
+        }
+      },
+      {
+        "id": "pip",
+        "base_uri": "flash://actors/pip/base",
+        "expressions": {
+          "neutral": "flash://actors/pip/expr/neutral",
+          "happy": "flash://actors/pip/expr/happy",
+          "sad": "flash://actors/pip/expr/sad",
+          "surprised": "flash://actors/pip/expr/surprised",
+          "angry": "flash://actors/pip/expr/angry",
+          "scared": "flash://actors/pip/expr/scared"
+        }
+      },
+      {
+        "id": "tuk",
+        "base_uri": "flash://actors/tuk/base",
+        "expressions": {
+          "neutral": "flash://actors/tuk/expr/neutral",
+          "happy": "flash://actors/tuk/expr/happy",
+          "sad": "flash://actors/tuk/expr/sad",
+          "surprised": "flash://actors/tuk/expr/surprised",
+          "angry": "flash://actors/tuk/expr/angry",
+          "scared": "flash://actors/tuk/expr/scared"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 3730
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 3710
+      },
+      {
+        "id": "aud_002",
+        "kind": "line",
+        "uri": "audio/aud_002.wav",
+        "format": "wav",
+        "duration_ms": 2890
+      },
+      {
+        "id": "aud_003",
+        "kind": "line",
+        "uri": "audio/aud_003.wav",
+        "format": "wav",
+        "duration_ms": 3670
+      },
+      {
+        "id": "aud_004",
+        "kind": "line",
+        "uri": "audio/aud_004.wav",
+        "format": "wav",
+        "duration_ms": 3320
+      },
+      {
+        "id": "aud_005",
+        "kind": "line",
+        "uri": "audio/aud_005.wav",
+        "format": "wav",
+        "duration_ms": 1330
+      },
+      {
+        "id": "aud_006",
+        "kind": "line",
+        "uri": "audio/aud_006.wav",
+        "format": "wav",
+        "duration_ms": 2370
+      },
+      {
+        "id": "aud_007",
+        "kind": "line",
+        "uri": "audio/aud_007.wav",
+        "format": "wav",
+        "duration_ms": 2990
+      },
+      {
+        "id": "aud_008",
+        "kind": "line",
+        "uri": "audio/aud_008.wav",
+        "format": "wav",
+        "duration_ms": 1810
+      },
+      {
+        "id": "aud_009",
+        "kind": "line",
+        "uri": "audio/aud_009.wav",
+        "format": "wav",
+        "duration_ms": 2670
+      },
+      {
+        "id": "aud_010",
+        "kind": "line",
+        "uri": "audio/aud_010.wav",
+        "format": "wav",
+        "duration_ms": 2820
+      },
+      {
+        "id": "aud_011",
+        "kind": "line",
+        "uri": "audio/aud_011.wav",
+        "format": "wav",
+        "duration_ms": 2125
+      },
+      {
+        "id": "aud_012",
+        "kind": "line",
+        "uri": "audio/aud_012.wav",
+        "format": "wav",
+        "duration_ms": 3570
+      },
+      {
+        "id": "aud_013",
+        "kind": "line",
+        "uri": "audio/aud_013.wav",
+        "format": "wav",
+        "duration_ms": 2840
+      },
+      {
+        "id": "aud_014",
+        "kind": "line",
+        "uri": "audio/aud_014.wav",
+        "format": "wav",
+        "duration_ms": 3120
+      },
+      {
+        "id": "aud_015",
+        "kind": "line",
+        "uri": "audio/aud_015.wav",
+        "format": "wav",
+        "duration_ms": 3180
+      },
+      {
+        "id": "aud_016",
+        "kind": "line",
+        "uri": "audio/aud_016.wav",
+        "format": "wav",
+        "duration_ms": 2500
+      },
+      {
+        "id": "sfx_bark",
+        "kind": "sfx",
+        "uri": "audio/sfx_bark.wav",
+        "format": "wav",
+        "duration_ms": 450
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 1010
+      },
+      {
+        "id": "sfx_sparkle",
+        "kind": "sfx",
+        "uri": "audio/sfx_sparkle.wav",
+        "format": "wav",
+        "duration_ms": 900
+      },
+      {
+        "id": "sfx_whoosh",
+        "kind": "sfx",
+        "uri": "audio/sfx_whoosh.wav",
+        "format": "wav",
+        "duration_ms": 700
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "Gather in, gather in! Tonight, a girl a long way from home.",
+      "line_audio": "aud_000",
+      "sfx": [
+        {
+          "audio": "sfx_sparkle",
+          "at_ms": 220
+        }
+      ],
+      "duration_ms": 4030,
+      "animation": "speak"
+    },
+    {
+      "index": 1,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "One day there was a girl called Marisol, and she lived in America.",
+      "line_audio": "aud_001",
+      "sfx": [],
+      "duration_ms": 4010,
+      "animation": "speak"
+    },
+    {
+      "index": 2,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "Then she moved to England. Everything was different.",
+      "line_audio": "aud_002",
+      "sfx": [
+        {
+          "audio": "sfx_whoosh",
+          "at_ms": 290
+        }
+      ],
+      "duration_ms": 3190,
+      "animation": "speak"
+    },
+    {
+      "index": 3,
+      "character_id": "marisol",
+      "expression": "sad",
+      "text": "Grey sky. Strange words. And nobody here says my name right.",
+      "line_audio": "aud_003",
+      "sfx": [],
+      "duration_ms": 3970,
+      "animation": "speak"
+    },
+    {
+      "index": 4,
+      "character_id": "miss_moon",
+      "expression": "sad",
+      "text": "She had no one to play with. And then a little girl came over.",
+      "line_audio": "aud_004",
+      "sfx": [],
+      "duration_ms": 3620,
+      "animation": "speak"
+    },
+    {
+      "index": 5,
+      "character_id": "marisol",
+      "expression": "surprised",
+      "text": "May we play together?",
+      "line_audio": "aud_005",
+      "sfx": [],
+      "duration_ms": 1630,
+      "animation": "speak"
+    },
+    {
+      "index": 6,
+      "character_id": "poppy",
+      "expression": "happy",
+      "text": "Yes! You're it, Marisol. Catch me if you can!",
+      "line_audio": "aud_006",
+      "sfx": [
+        {
+          "audio": "sfx_whoosh",
+          "at_ms": 1030
+        }
+      ],
+      "duration_ms": 2670,
+      "animation": "speak"
+    },
+    {
+      "index": 7,
+      "character_id": "poppy",
+      "expression": "neutral",
+      "text": "That was so fun. But I have to go home now. Bye!",
+      "line_audio": "aud_007",
+      "sfx": [],
+      "duration_ms": 3290,
+      "animation": "speak"
+    },
+    {
+      "index": 8,
+      "character_id": "marisol",
+      "expression": "sad",
+      "text": "And then I had nobody again.",
+      "line_audio": "aud_008",
+      "sfx": [],
+      "duration_ms": 2110,
+      "animation": "speak"
+    },
+    {
+      "index": 9,
+      "character_id": "dad",
+      "expression": "sad",
+      "text": "I know, love. A new place takes a little time.",
+      "line_audio": "aud_009",
+      "sfx": [],
+      "duration_ms": 2970,
+      "animation": "speak"
+    },
+    {
+      "index": 10,
+      "character_id": "dad",
+      "expression": "happy",
+      "text": "Come on. Put your shoes on. We're going to the pet store.",
+      "line_audio": "aud_010",
+      "sfx": [],
+      "duration_ms": 3120,
+      "animation": "speak"
+    },
+    {
+      "index": 11,
+      "character_id": "bear",
+      "expression": "happy",
+      "text": "Woof! Woof! Hello! Are you my girl?",
+      "line_audio": "aud_011",
+      "sfx": [
+        {
+          "audio": "sfx_bark",
+          "at_ms": 90
+        }
+      ],
+      "duration_ms": 2425,
+      "animation": "speak"
+    },
+    {
+      "index": 12,
+      "character_id": "marisol",
+      "expression": "happy",
+      "text": "This is Bear. He's brown and fluffy. He played with me every day.",
+      "line_audio": "aud_012",
+      "sfx": [],
+      "duration_ms": 3870,
+      "animation": "speak"
+    },
+    {
+      "index": 13,
+      "character_id": "marisol",
+      "expression": "happy",
+      "text": "Everyone came to meet Bear. Then they came to meet me.",
+      "line_audio": "aud_013",
+      "sfx": [],
+      "duration_ms": 3140,
+      "animation": "speak"
+    },
+    {
+      "index": 14,
+      "character_id": "poppy",
+      "expression": "happy",
+      "text": "Marisol! Marisol! Can Bear play chase with all of us?",
+      "line_audio": "aud_014",
+      "sfx": [],
+      "duration_ms": 3420,
+      "animation": "speak"
+    },
+    {
+      "index": 15,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "She got more friends, and more friends, and more friends.",
+      "line_audio": "aud_015",
+      "sfx": [],
+      "duration_ms": 3480,
+      "animation": "speak"
+    },
+    {
+      "index": 16,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "And Marisol lived happily ever after.",
+      "line_audio": "aud_016",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 890
+        }
+      ],
+      "duration_ms": 2800,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}

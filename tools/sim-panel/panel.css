@@ -1,0 +1,191 @@
+/* The StickS3 chassis and its instrument rail. */
+:root {
+  --bg: #0e1016;
+  --panel: #171a26;
+  --edge: rgba(148, 176, 194, 0.16);
+  --ink: #c8d4de;
+  --dim: #566c86;
+  --accent: #f5a25d;
+  --ch0: #5bc06a;
+  --ch1: #41a6f6;
+  --scale: 2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    13px/1.5 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+}
+
+.bench {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* The orange M5StickC body. The screen sits inset with the buttons below it,
+   in the same relative positions as the hardware. */
+.chassis {
+  background: #e8813a;
+  border-radius: 14px;
+  padding: 10px 9px 7px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+  flex: 0 0 auto;
+}
+
+#lcd {
+  display: block;
+  width: calc(135px * var(--scale));
+  height: calc(240px * var(--scale));
+  background: #12141f;
+  border-radius: 3px;
+  image-rendering: pixelated;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 12px 0;
+}
+
+.pbtn {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #c96a28;
+  box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+}
+.pbtn.sq {
+  border-radius: 5px;
+  width: 17px;
+  height: 17px;
+}
+.pbtn:active {
+  background: #a85520;
+}
+
+.rail {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  align-self: stretch;
+}
+
+.block {
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  padding: 9px 11px;
+}
+.block.grow {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.block h2 {
+  margin: 0 0 6px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-weight: 600;
+}
+
+.block p {
+  margin: 2px 0;
+}
+.dim {
+  color: var(--dim);
+}
+.warn {
+  color: var(--accent);
+}
+.hidden {
+  display: none;
+}
+
+.chan {
+  margin-bottom: 7px;
+  font-size: 11px;
+}
+.chan span {
+  display: block;
+  color: var(--dim);
+  margin-bottom: 3px;
+}
+
+.meter {
+  display: block;
+  height: 6px;
+  background: #232838;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.meter b {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--ch0);
+  transition: width 100ms linear;
+}
+.meter.sfx b {
+  background: var(--ch1);
+}
+
+.transport {
+  display: flex;
+  gap: 6px;
+}
+.transport button {
+  flex: 1;
+  background: #232838;
+  border: 0;
+  border-radius: 5px;
+  color: var(--ink);
+  padding: 5px 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+.transport button:hover {
+  background: #2c3348;
+}
+.transport button.on {
+  background: var(--accent);
+  color: #1a1c2c;
+}
+
+#serial {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  font-size: 11px;
+  color: var(--dim);
+}
+#serial li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#serial li.warn,
+#serial li.error {
+  color: var(--accent);
+}

@@ -1,0 +1,487 @@
+{
+  "schema_version": 2,
+  "id": "perf_just_you_wait",
+  "title": "Just You Wait",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "caterpillar",
+      "display_name": "Caterpillar",
+      "actor": "rosa",
+      "voice": "tts_bright_young",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "ladybug",
+      "display_name": "Ladybug",
+      "actor": "pip",
+      "voice": "tts_high_quick",
+      "layers": {
+        "headwear": "antennae",
+        "back_prop": "wings"
+      },
+      "default_expression": "happy"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "neutral": "flash://actors/miss_moon/expr/neutral",
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted",
+          "giggling": "flash://actors/miss_moon/expr/giggling",
+          "curious": "flash://actors/miss_moon/expr/curious",
+          "surprised": "flash://actors/miss_moon/expr/surprised",
+          "sad": "flash://actors/miss_moon/expr/sad",
+          "sleepy": "flash://actors/miss_moon/expr/sleepy",
+          "yawning": "flash://actors/miss_moon/expr/yawning"
+        }
+      },
+      {
+        "id": "bruno",
+        "base_uri": "flash://actors/bruno/base",
+        "expressions": {
+          "neutral": "flash://actors/bruno/expr/neutral",
+          "happy": "flash://actors/bruno/expr/happy",
+          "sad": "flash://actors/bruno/expr/sad",
+          "surprised": "flash://actors/bruno/expr/surprised",
+          "angry": "flash://actors/bruno/expr/angry",
+          "scared": "flash://actors/bruno/expr/scared"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy",
+          "sad": "flash://actors/milo/expr/sad",
+          "surprised": "flash://actors/milo/expr/surprised",
+          "angry": "flash://actors/milo/expr/angry",
+          "scared": "flash://actors/milo/expr/scared"
+        }
+      },
+      {
+        "id": "ada",
+        "base_uri": "flash://actors/ada/base",
+        "expressions": {
+          "neutral": "flash://actors/ada/expr/neutral",
+          "happy": "flash://actors/ada/expr/happy",
+          "sad": "flash://actors/ada/expr/sad",
+          "surprised": "flash://actors/ada/expr/surprised",
+          "angry": "flash://actors/ada/expr/angry",
+          "scared": "flash://actors/ada/expr/scared"
+        }
+      },
+      {
+        "id": "rosa",
+        "base_uri": "flash://actors/rosa/base",
+        "expressions": {
+          "neutral": "flash://actors/rosa/expr/neutral",
+          "happy": "flash://actors/rosa/expr/happy",
+          "sad": "flash://actors/rosa/expr/sad",
+          "surprised": "flash://actors/rosa/expr/surprised",
+          "angry": "flash://actors/rosa/expr/angry",
+          "scared": "flash://actors/rosa/expr/scared"
+        }
+      },
+      {
+        "id": "pip",
+        "base_uri": "flash://actors/pip/base",
+        "expressions": {
+          "neutral": "flash://actors/pip/expr/neutral",
+          "happy": "flash://actors/pip/expr/happy",
+          "sad": "flash://actors/pip/expr/sad",
+          "surprised": "flash://actors/pip/expr/surprised",
+          "angry": "flash://actors/pip/expr/angry",
+          "scared": "flash://actors/pip/expr/scared"
+        }
+      },
+      {
+        "id": "tuk",
+        "base_uri": "flash://actors/tuk/base",
+        "expressions": {
+          "neutral": "flash://actors/tuk/expr/neutral",
+          "happy": "flash://actors/tuk/expr/happy",
+          "sad": "flash://actors/tuk/expr/sad",
+          "surprised": "flash://actors/tuk/expr/surprised",
+          "angry": "flash://actors/tuk/expr/angry",
+          "scared": "flash://actors/tuk/expr/scared"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 3430
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 3190
+      },
+      {
+        "id": "aud_002",
+        "kind": "line",
+        "uri": "audio/aud_002.wav",
+        "format": "wav",
+        "duration_ms": 2230
+      },
+      {
+        "id": "aud_003",
+        "kind": "line",
+        "uri": "audio/aud_003.wav",
+        "format": "wav",
+        "duration_ms": 1780
+      },
+      {
+        "id": "aud_004",
+        "kind": "line",
+        "uri": "audio/aud_004.wav",
+        "format": "wav",
+        "duration_ms": 1597
+      },
+      {
+        "id": "aud_005",
+        "kind": "line",
+        "uri": "audio/aud_005.wav",
+        "format": "wav",
+        "duration_ms": 2510
+      },
+      {
+        "id": "aud_006",
+        "kind": "line",
+        "uri": "audio/aud_006.wav",
+        "format": "wav",
+        "duration_ms": 1570
+      },
+      {
+        "id": "aud_007",
+        "kind": "line",
+        "uri": "audio/aud_007.wav",
+        "format": "wav",
+        "duration_ms": 650
+      },
+      {
+        "id": "aud_008",
+        "kind": "line",
+        "uri": "audio/aud_008.wav",
+        "format": "wav",
+        "duration_ms": 4080
+      },
+      {
+        "id": "aud_009",
+        "kind": "line",
+        "uri": "audio/aud_009.wav",
+        "format": "wav",
+        "duration_ms": 1990
+      },
+      {
+        "id": "aud_010",
+        "kind": "line",
+        "uri": "audio/aud_010.wav",
+        "format": "wav",
+        "duration_ms": 2810
+      },
+      {
+        "id": "aud_011",
+        "kind": "line",
+        "uri": "audio/aud_011.wav",
+        "format": "wav",
+        "duration_ms": 2740
+      },
+      {
+        "id": "aud_012",
+        "kind": "line",
+        "uri": "audio/aud_012.wav",
+        "format": "wav",
+        "duration_ms": 1278
+      },
+      {
+        "id": "aud_013",
+        "kind": "line",
+        "uri": "audio/aud_013.wav",
+        "format": "wav",
+        "duration_ms": 1720
+      },
+      {
+        "id": "aud_014",
+        "kind": "line",
+        "uri": "audio/aud_014.wav",
+        "format": "wav",
+        "duration_ms": 2150
+      },
+      {
+        "id": "aud_015",
+        "kind": "line",
+        "uri": "audio/aud_015.wav",
+        "format": "wav",
+        "duration_ms": 1320
+      },
+      {
+        "id": "aud_016",
+        "kind": "line",
+        "uri": "audio/aud_016.wav",
+        "format": "wav",
+        "duration_ms": 3770
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 1010
+      },
+      {
+        "id": "sfx_sparkle",
+        "kind": "sfx",
+        "uri": "audio/sfx_sparkle.wav",
+        "format": "wav",
+        "duration_ms": 900
+      },
+      {
+        "id": "sfx_squeak",
+        "kind": "sfx",
+        "uri": "audio/sfx_squeak.wav",
+        "format": "wav",
+        "duration_ms": 400
+      },
+      {
+        "id": "sfx_whoosh",
+        "kind": "sfx",
+        "uri": "audio/sfx_whoosh.wav",
+        "format": "wav",
+        "duration_ms": 700
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "On a green leaf lived a caterpillar, munching all day long.",
+      "line_audio": "aud_000",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 200
+        }
+      ],
+      "duration_ms": 3730,
+      "animation": "speak"
+    },
+    {
+      "index": 1,
+      "character_id": "caterpillar",
+      "expression": "happy",
+      "text": "Good morning, sunshine! Good morning, leaf! What a lovely day.",
+      "line_audio": "aud_001",
+      "sfx": [],
+      "duration_ms": 3490,
+      "animation": "speak"
+    },
+    {
+      "index": 2,
+      "character_id": "ladybug",
+      "expression": "happy",
+      "text": "You are *so* ugly. Because you're a caterpillar.",
+      "line_audio": "aud_002",
+      "sfx": [
+        {
+          "audio": "sfx_squeak",
+          "at_ms": 120
+        }
+      ],
+      "duration_ms": 2530,
+      "animation": "speak"
+    },
+    {
+      "index": 3,
+      "character_id": "caterpillar",
+      "expression": "neutral",
+      "text": "Just you wait. I'll be beautiful.",
+      "line_audio": "aud_003",
+      "sfx": [],
+      "duration_ms": 2080,
+      "animation": "speak"
+    },
+    {
+      "index": 4,
+      "character_id": "ladybug",
+      "expression": "happy",
+      "text": "No you won't! Let's make a bet.",
+      "line_audio": "aud_004",
+      "sfx": [],
+      "duration_ms": 1897,
+      "animation": "speak"
+    },
+    {
+      "index": 5,
+      "character_id": "ladybug",
+      "expression": "happy",
+      "text": "If you're not beautiful in two days, you have to leave.",
+      "line_audio": "aud_005",
+      "sfx": [],
+      "duration_ms": 2810,
+      "animation": "speak"
+    },
+    {
+      "index": 6,
+      "character_id": "ladybug",
+      "expression": "neutral",
+      "text": "And if you are... I'll have to leave.",
+      "line_audio": "aud_006",
+      "sfx": [],
+      "duration_ms": 1870,
+      "animation": "speak"
+    },
+    {
+      "index": 7,
+      "character_id": "caterpillar",
+      "expression": "happy",
+      "text": "Deal.",
+      "line_audio": "aud_007",
+      "sfx": [],
+      "duration_ms": 950,
+      "animation": "speak"
+    },
+    {
+      "index": 8,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "The next day, the caterpillar was gone. In her place: a chrysalis.",
+      "line_audio": "aud_008",
+      "sfx": [],
+      "duration_ms": 4380,
+      "animation": "speak"
+    },
+    {
+      "index": 9,
+      "character_id": "ladybug",
+      "expression": "happy",
+      "text": "Ha! You're even uglier than you were before!",
+      "line_audio": "aud_009",
+      "sfx": [
+        {
+          "audio": "sfx_squeak",
+          "at_ms": 110
+        }
+      ],
+      "duration_ms": 2290,
+      "animation": "speak"
+    },
+    {
+      "index": 10,
+      "character_id": "miss_moon",
+      "expression": "neutral",
+      "text": "The chrysalis said nothing at all. It just waited.",
+      "line_audio": "aud_010",
+      "sfx": [],
+      "duration_ms": 3110,
+      "animation": "speak"
+    },
+    {
+      "index": 11,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "And on the second day, the chrysalis was gone too.",
+      "line_audio": "aud_011",
+      "sfx": [
+        {
+          "audio": "sfx_sparkle",
+          "at_ms": 1430
+        }
+      ],
+      "duration_ms": 3040,
+      "animation": "speak"
+    },
+    {
+      "index": 12,
+      "character_id": "ladybug",
+      "expression": "surprised",
+      "text": "Wait - where's the caterpillar?",
+      "line_audio": "aud_012",
+      "sfx": [],
+      "duration_ms": 1578,
+      "animation": "speak"
+    },
+    {
+      "index": 13,
+      "character_id": "caterpillar",
+      "expression": "happy",
+      "layers": {
+        "headwear": "antennae",
+        "back_prop": "wings"
+      },
+      "text": "I'm right here. I'm beautiful.",
+      "line_audio": "aud_013",
+      "sfx": [],
+      "duration_ms": 2020,
+      "animation": "speak"
+    },
+    {
+      "index": 14,
+      "character_id": "caterpillar",
+      "expression": "happy",
+      "layers": {
+        "headwear": "antennae",
+        "back_prop": "wings"
+      },
+      "text": "So you have to leave, you mean ladybug.",
+      "line_audio": "aud_014",
+      "sfx": [],
+      "duration_ms": 2450,
+      "animation": "speak"
+    },
+    {
+      "index": 15,
+      "character_id": "ladybug",
+      "expression": "sad",
+      "text": "I did say that, didn't I.",
+      "line_audio": "aud_015",
+      "sfx": [],
+      "duration_ms": 1620,
+      "animation": "speak"
+    },
+    {
+      "index": 16,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "Off flew the ladybug, and never called a caterpillar ugly again.",
+      "line_audio": "aud_016",
+      "sfx": [
+        {
+          "audio": "sfx_whoosh",
+          "at_ms": 410
+        },
+        {
+          "audio": "sfx_chime",
+          "at_ms": 2320
+        }
+      ],
+      "duration_ms": 4070,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}

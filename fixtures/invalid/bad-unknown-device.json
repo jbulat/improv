@@ -1,0 +1,98 @@
+{
+  "schema_version": 2,
+  "id": "perf_test_minimal",
+  "title": "Minimal Test Performance",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "hero",
+      "display_name": "The Hero",
+      "actor": "milo",
+      "voice": "tts_mid_earnest",
+      "default_expression": "neutral"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 2000
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 1500
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 800
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "Once upon a time!",
+      "line_audio": "aud_000",
+      "sfx": [],
+      "duration_ms": 2300,
+      "animation": "speak",
+      "device": "d9"
+    },
+    {
+      "index": 1,
+      "character_id": "hero",
+      "expression": "happy",
+      "text": "Hello!",
+      "line_audio": "aud_001",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 100
+        }
+      ],
+      "duration_ms": 1800,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}

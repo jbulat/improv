@@ -1,0 +1,50 @@
+{
+  "name": "improv",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "tsx tools/validate.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "gen:sfx": "tsx tools/gen-sfx.ts",
+    "gen:audio": "tsx tools/gen-line-audio.ts",
+    "gen:audio:all": "tsx tools/gen-all-audio.ts",
+    "setup:kokoro": "sh tools/setup-kokoro.sh",
+    "gen:invalid": "tsx tools/gen-invalid-fixtures.ts",
+    "gen:troupe": "tsx tools/gen-troupe-header.ts",
+    "build:app": "tsx tools/build-app.ts",
+    "build:viewer": "tsx tools/build-app.ts --entry viewer",
+    "sim": "tsx tools/sim.ts",
+    "sim:viewer": "tsx tools/sim.ts --entry viewer",
+    "preview:art": "tsx tools/preview-art.ts",
+    "preview:layout": "tsx tools/preview-layout.ts",
+    "gen:social": "tsx tools/gen-social-preview.ts",
+    "preview:audio": "tsx tools/preview-audio.ts",
+    "export:story": "tsx tools/export-story.ts",
+    "export:video": "tsx tools/export-video.ts",
+    "pack:audio": "tsx tools/pack-audio.ts",
+    "serve:bundle": "tsx tools/serve-bundle.ts",
+    "format:cpp": "git ls-files -z '*.cpp' '*.h' | xargs -0 clang-format -i",
+    "format:cpp:check": "git ls-files -z '*.cpp' '*.h' | xargs -0 clang-format --dry-run --Werror",
+    "all": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run build:viewer"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@types/node": "^22",
+    "ajv": "^8",
+    "eslint": "^9",
+    "globals": "^15",
+    "prettier": "^3",
+    "tsx": "^4",
+    "typescript": "^5",
+    "typescript-eslint": "^8",
+    "vitest": "^4.1.12"
+  }
+}

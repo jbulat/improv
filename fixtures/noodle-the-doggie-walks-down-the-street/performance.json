@@ -1,0 +1,493 @@
+{
+  "schema_version": 2,
+  "id": "perf_noodle_the_doggie_walks_down_the_street",
+  "title": "Noodle the Doggie Walks Down the Street",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "noodle",
+      "display_name": "Noodle",
+      "actor": "pip",
+      "voice": "tts_high_quick",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "hattie",
+      "display_name": "Hattie",
+      "actor": "rosa",
+      "voice": "tts_bright_young",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "shopkeeper",
+      "display_name": "The Shopkeeper",
+      "actor": "bruno",
+      "voice": "tts_low_gruff",
+      "default_expression": "neutral"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "neutral": "flash://actors/miss_moon/expr/neutral",
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted",
+          "giggling": "flash://actors/miss_moon/expr/giggling",
+          "curious": "flash://actors/miss_moon/expr/curious",
+          "surprised": "flash://actors/miss_moon/expr/surprised",
+          "sad": "flash://actors/miss_moon/expr/sad",
+          "sleepy": "flash://actors/miss_moon/expr/sleepy",
+          "yawning": "flash://actors/miss_moon/expr/yawning"
+        }
+      },
+      {
+        "id": "bruno",
+        "base_uri": "flash://actors/bruno/base",
+        "expressions": {
+          "neutral": "flash://actors/bruno/expr/neutral",
+          "happy": "flash://actors/bruno/expr/happy",
+          "sad": "flash://actors/bruno/expr/sad",
+          "surprised": "flash://actors/bruno/expr/surprised",
+          "angry": "flash://actors/bruno/expr/angry",
+          "scared": "flash://actors/bruno/expr/scared"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy",
+          "sad": "flash://actors/milo/expr/sad",
+          "surprised": "flash://actors/milo/expr/surprised",
+          "angry": "flash://actors/milo/expr/angry",
+          "scared": "flash://actors/milo/expr/scared"
+        }
+      },
+      {
+        "id": "ada",
+        "base_uri": "flash://actors/ada/base",
+        "expressions": {
+          "neutral": "flash://actors/ada/expr/neutral",
+          "happy": "flash://actors/ada/expr/happy",
+          "sad": "flash://actors/ada/expr/sad",
+          "surprised": "flash://actors/ada/expr/surprised",
+          "angry": "flash://actors/ada/expr/angry",
+          "scared": "flash://actors/ada/expr/scared"
+        }
+      },
+      {
+        "id": "rosa",
+        "base_uri": "flash://actors/rosa/base",
+        "expressions": {
+          "neutral": "flash://actors/rosa/expr/neutral",
+          "happy": "flash://actors/rosa/expr/happy",
+          "sad": "flash://actors/rosa/expr/sad",
+          "surprised": "flash://actors/rosa/expr/surprised",
+          "angry": "flash://actors/rosa/expr/angry",
+          "scared": "flash://actors/rosa/expr/scared"
+        }
+      },
+      {
+        "id": "pip",
+        "base_uri": "flash://actors/pip/base",
+        "expressions": {
+          "neutral": "flash://actors/pip/expr/neutral",
+          "happy": "flash://actors/pip/expr/happy",
+          "sad": "flash://actors/pip/expr/sad",
+          "surprised": "flash://actors/pip/expr/surprised",
+          "angry": "flash://actors/pip/expr/angry",
+          "scared": "flash://actors/pip/expr/scared"
+        }
+      },
+      {
+        "id": "tuk",
+        "base_uri": "flash://actors/tuk/base",
+        "expressions": {
+          "neutral": "flash://actors/tuk/expr/neutral",
+          "happy": "flash://actors/tuk/expr/happy",
+          "sad": "flash://actors/tuk/expr/sad",
+          "surprised": "flash://actors/tuk/expr/surprised",
+          "angry": "flash://actors/tuk/expr/angry",
+          "scared": "flash://actors/tuk/expr/scared"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 2880
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 3836
+      },
+      {
+        "id": "aud_002",
+        "kind": "line",
+        "uri": "audio/aud_002.wav",
+        "format": "wav",
+        "duration_ms": 2820
+      },
+      {
+        "id": "aud_003",
+        "kind": "line",
+        "uri": "audio/aud_003.wav",
+        "format": "wav",
+        "duration_ms": 5680
+      },
+      {
+        "id": "aud_004",
+        "kind": "line",
+        "uri": "audio/aud_004.wav",
+        "format": "wav",
+        "duration_ms": 2430
+      },
+      {
+        "id": "aud_005",
+        "kind": "line",
+        "uri": "audio/aud_005.wav",
+        "format": "wav",
+        "duration_ms": 3200
+      },
+      {
+        "id": "aud_006",
+        "kind": "line",
+        "uri": "audio/aud_006.wav",
+        "format": "wav",
+        "duration_ms": 3540
+      },
+      {
+        "id": "aud_007",
+        "kind": "line",
+        "uri": "audio/aud_007.wav",
+        "format": "wav",
+        "duration_ms": 4140
+      },
+      {
+        "id": "aud_008",
+        "kind": "line",
+        "uri": "audio/aud_008.wav",
+        "format": "wav",
+        "duration_ms": 1680
+      },
+      {
+        "id": "aud_009",
+        "kind": "line",
+        "uri": "audio/aud_009.wav",
+        "format": "wav",
+        "duration_ms": 3090
+      },
+      {
+        "id": "aud_010",
+        "kind": "line",
+        "uri": "audio/aud_010.wav",
+        "format": "wav",
+        "duration_ms": 670
+      },
+      {
+        "id": "aud_011",
+        "kind": "line",
+        "uri": "audio/aud_011.wav",
+        "format": "wav",
+        "duration_ms": 2960
+      },
+      {
+        "id": "aud_012",
+        "kind": "line",
+        "uri": "audio/aud_012.wav",
+        "format": "wav",
+        "duration_ms": 2400
+      },
+      {
+        "id": "aud_013",
+        "kind": "line",
+        "uri": "audio/aud_013.wav",
+        "format": "wav",
+        "duration_ms": 2830
+      },
+      {
+        "id": "aud_014",
+        "kind": "line",
+        "uri": "audio/aud_014.wav",
+        "format": "wav",
+        "duration_ms": 3290
+      },
+      {
+        "id": "aud_015",
+        "kind": "line",
+        "uri": "audio/aud_015.wav",
+        "format": "wav",
+        "duration_ms": 3100
+      },
+      {
+        "id": "aud_016",
+        "kind": "line",
+        "uri": "audio/aud_016.wav",
+        "format": "wav",
+        "duration_ms": 2757
+      },
+      {
+        "id": "aud_017",
+        "kind": "line",
+        "uri": "audio/aud_017.wav",
+        "format": "wav",
+        "duration_ms": 3880
+      },
+      {
+        "id": "sfx_bark",
+        "kind": "sfx",
+        "uri": "audio/sfx_bark.wav",
+        "format": "wav",
+        "duration_ms": 450
+      },
+      {
+        "id": "sfx_whoosh",
+        "kind": "sfx",
+        "uri": "audio/sfx_whoosh.wav",
+        "format": "wav",
+        "duration_ms": 700
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 1010
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "Noodle the doggie lived in the house on Oak Tree Lane.",
+      "line_audio": "aud_000",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 340
+        }
+      ],
+      "duration_ms": 3180,
+      "animation": "speak"
+    },
+    {
+      "index": 1,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "Early one summer morning, he smelled sausages down in the village.",
+      "line_audio": "aud_001",
+      "sfx": [],
+      "duration_ms": 4136,
+      "animation": "speak"
+    },
+    {
+      "index": 2,
+      "character_id": "noodle",
+      "expression": "happy",
+      "text": "Sniff, sniff... sausages! Down the street I go!",
+      "line_audio": "aud_002",
+      "sfx": [
+        {
+          "audio": "sfx_bark",
+          "at_ms": 130
+        }
+      ],
+      "duration_ms": 3120,
+      "animation": "speak"
+    },
+    {
+      "index": 3,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "But the shops weren't open yet — all except one. The sausage shop's door was left open!",
+      "line_audio": "aud_003",
+      "sfx": [],
+      "duration_ms": 5980,
+      "animation": "speak"
+    },
+    {
+      "index": 4,
+      "character_id": "noodle",
+      "expression": "surprised",
+      "text": "Ooh! Just one little sausage. Just for me.",
+      "line_audio": "aud_004",
+      "sfx": [],
+      "duration_ms": 2730,
+      "animation": "speak"
+    },
+    {
+      "index": 5,
+      "character_id": "shopkeeper",
+      "expression": "angry",
+      "text": "Hey! That's my sausage! Come back here, dog!",
+      "line_audio": "aud_005",
+      "sfx": [],
+      "duration_ms": 3500,
+      "animation": "speak"
+    },
+    {
+      "index": 6,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "And off went the shopkeeper, running after Noodle down the street.",
+      "line_audio": "aud_006",
+      "sfx": [
+        {
+          "audio": "sfx_whoosh",
+          "at_ms": 230
+        }
+      ],
+      "duration_ms": 3840,
+      "animation": "speak"
+    },
+    {
+      "index": 7,
+      "character_id": "miss_moon",
+      "expression": "sad",
+      "text": "Back on Oak Tree Lane, Hattie woke up. Noodle's basket was empty.",
+      "line_audio": "aud_007",
+      "sfx": [],
+      "duration_ms": 4440,
+      "animation": "speak"
+    },
+    {
+      "index": 8,
+      "character_id": "hattie",
+      "expression": "sad",
+      "text": "Noodle? Noodle, where are you?",
+      "line_audio": "aud_008",
+      "sfx": [],
+      "duration_ms": 1980,
+      "animation": "speak"
+    },
+    {
+      "index": 9,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "She ran to the village — and saw her dog being chased!",
+      "line_audio": "aud_009",
+      "sfx": [],
+      "duration_ms": 3390,
+      "animation": "speak"
+    },
+    {
+      "index": 10,
+      "character_id": "hattie",
+      "expression": "surprised",
+      "text": "NOODLE!",
+      "line_audio": "aud_010",
+      "sfx": [],
+      "duration_ms": 970,
+      "animation": "speak"
+    },
+    {
+      "index": 11,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "Noodle heard his name and ran straight to his girl.",
+      "line_audio": "aud_011",
+      "sfx": [
+        {
+          "audio": "sfx_bark",
+          "at_ms": 2260
+        }
+      ],
+      "duration_ms": 3260,
+      "animation": "speak"
+    },
+    {
+      "index": 12,
+      "character_id": "shopkeeper",
+      "expression": "angry",
+      "text": "Stop! You two, stop right there!",
+      "line_audio": "aud_012",
+      "sfx": [],
+      "duration_ms": 2700,
+      "animation": "speak"
+    },
+    {
+      "index": 13,
+      "character_id": "hattie",
+      "expression": "scared",
+      "text": "Quick, Noodle — behind the fountain. Shhh!",
+      "line_audio": "aud_013",
+      "sfx": [],
+      "duration_ms": 3130,
+      "animation": "speak"
+    },
+    {
+      "index": 14,
+      "character_id": "miss_moon",
+      "expression": "giggling",
+      "text": "They hid behind the fountain and kept very, very still.",
+      "line_audio": "aud_014",
+      "sfx": [],
+      "duration_ms": 3590,
+      "animation": "speak"
+    },
+    {
+      "index": 15,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "The shopkeeper puffed straight past, and never looked back.",
+      "line_audio": "aud_015",
+      "sfx": [],
+      "duration_ms": 3400,
+      "animation": "speak"
+    },
+    {
+      "index": 16,
+      "character_id": "noodle",
+      "expression": "happy",
+      "text": "Woof! We did it. And I still have my sausage.",
+      "line_audio": "aud_016",
+      "sfx": [
+        {
+          "audio": "sfx_bark",
+          "at_ms": 110
+        }
+      ],
+      "duration_ms": 3057,
+      "animation": "speak"
+    },
+    {
+      "index": 17,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "So Hattie and Noodle walked home, happily ever after. The end.",
+      "line_audio": "aud_017",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 1960
+        }
+      ],
+      "duration_ms": 4180,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}

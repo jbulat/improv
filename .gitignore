@@ -1,0 +1,37 @@
+# Claude Code local (private) settings
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+node_modules/
+
+# scratch art previews (regenerate with npm run preview:art -- <actor>)
+.art-preview/
+
+# simulator session directory (regenerate with npm run sim)
+.sim/
+
+# Nothing in build/ is generated-but-uncommitted anymore: since the sim
+# target's retirement every build (the .device.lua apps, the viewer) is a
+# committed artifact whose bytes tests/build-app.test.ts pins to current
+# sources. Stray <bundle>.lua files from before the retirement show up as
+# untracked -- delete them.
+
+# scratch story audio (regenerate with npm run preview:audio -- --bundle <dir>)
+.audio-preview/
+
+# staged device filesystem image contents (regenerate with npm run pack:audio)
+device/data/
+
+# superpowers brainstorming companion
+.superpowers/
+
+# exported story videos (regenerate with npm run export:video -- --bundle <dir>)
+.video-export/
+
+# GitHub social preview card (regenerate with npm run gen:social)
+.social-preview/
+
+# vendor keys and tokens -- never committed
+.env
+.env.*

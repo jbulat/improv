@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Typecheck, test and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # lua runs the device app headlessly; ffmpeg lets the video-export tests
+      # run instead of skipping. The runner already has a C++ compiler.
+      - name: Install Lua and ffmpeg
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q lua5.4 ffmpeg
+          lua -v
+
+      - run: npm ci
+
+      # clang-format is pinned, because each release lays code out a little
+      # differently. setup-python gives a pip that may install packages.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: C++ formatting
+        run: |
+          pip install -q clang-format==19.1.7
+          npm run format:cpp:check
+
+      - name: Typecheck, lint, format check, test, build the viewer
+        run: npm run all
+
+      - name: Rebuild every story app
+        run: |
+          for dir in fixtures/*/; do
+            name=$(basename "$dir")
+            [ "$name" = invalid ] && continue
+            npm run -s build:app -- --bundle "fixtures/$name"
+          done
+
+      - name: Committed build output is current
+        run: |
+          if ! git diff --exit-code --stat; then
+            echo "::error::A committed generated file is stale. Run the build locally and commit the result."
+            exit 1
+          fi
+
+  firmware:
+    name: Build the StickS3 firmware
+    # Off unless the repository variable FIRMWARE_CI is "true" (Settings >
+    # Secrets and variables > Actions > Variables). The job is skipped, not failed.
+    if: vars.FIRMWARE_CI == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ runner.os }}-${{ hashFiles('device/platformio.ini') }}
+
+      - run: pip install platformio
+
+      - run: pio run -d device

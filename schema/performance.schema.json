@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://improv.local/schema/performance.schema.json",
+  "title": "Performance",
+  "description": "The canned, pushable artifact for one story: cast + assets + timeline. Frozen contract between cloud and device (schema_version 2).",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "cast", "assets", "timeline", "stage"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 2 },
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "cast": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/CastMember" } },
+    "assets": { "$ref": "#/definitions/AssetManifest" },
+    "timeline": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/Beat" } },
+    "stage": {
+      "type": "object",
+      "required": ["devices", "default_device"],
+      "additionalProperties": false,
+      "properties": {
+        "devices": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "default_device": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "Expression": {
+      "enum": ["neutral", "happy", "sad", "surprised", "angry", "scared", "delighted", "giggling", "curious"]
+    },
+    "CastMember": {
+      "type": "object",
+      "required": ["character_id", "display_name", "actor", "voice", "default_expression"],
+      "additionalProperties": false,
+      "properties": {
+        "character_id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "actor": { "type": "string", "minLength": 1 },
+        "voice": { "type": "string", "minLength": 1 },
+        "layers": { "$ref": "#/definitions/Layers" },
+        "default_expression": { "$ref": "#/definitions/Expression" }
+      }
+    },
+    "Layers": {
+      "description": "Paper-doll layers, by slot. Optional and slot-by-slot nullable: an absent object or a null slot means the slot is empty. Ids resolve against the troupe's layer catalog. On a cast member this is what the role wears throughout; on a beat it overrides the role's set slot-by-slot for that beat only (an explicit null strips what the cast wears).",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "back_prop": { "type": ["string", "null"], "minLength": 1 },
+        "costume": { "type": ["string", "null"], "minLength": 1 },
+        "headwear": { "type": ["string", "null"], "minLength": 1 },
+        "front_prop": { "type": ["string", "null"], "minLength": 1 }
+      }
+    },
+    "AssetManifest": {
+      "type": "object",
+      "required": ["actors", "audio"],
+      "additionalProperties": false,
+      "properties": {
+        "actors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "base_uri", "expressions"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "base_uri": { "type": "string", "minLength": 1 },
+              "expressions": { "type": "object", "additionalProperties": { "type": "string" } }
+            }
+          }
+        },
+        "audio": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "kind", "uri", "format", "duration_ms"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "kind": { "enum": ["line", "sfx"] },
+              "uri": { "type": "string", "minLength": 1 },
+              "format": { "enum": ["wav"] },
+              "duration_ms": { "type": "integer", "minimum": 1 }
+            }
+          }
+        }
+      }
+    },
+    "Beat": {
+      "type": "object",
+      "required": ["index", "character_id", "expression", "text", "line_audio", "sfx", "duration_ms", "animation"],
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "character_id": { "type": "string", "minLength": 1 },
+        "expression": { "$ref": "#/definitions/Expression" },
+        "layers": { "$ref": "#/definitions/Layers" },
+        "text": { "type": "string" },
+        "line_audio": { "type": ["string", "null"] },
+        "sfx": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["audio", "at_ms"],
+            "additionalProperties": false,
+            "properties": {
+              "audio": { "type": "string", "minLength": 1 },
+              "at_ms": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "duration_ms": { "type": "integer", "minimum": 1 },
+        "animation": { "enum": ["speak", "none", "enter"] },
+        "device": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

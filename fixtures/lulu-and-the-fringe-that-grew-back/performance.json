@@ -1,0 +1,485 @@
+{
+  "schema_version": 2,
+  "id": "perf_lulu_and_the_fringe_that_grew_back",
+  "title": "Lulu and the Fringe That Grew Back",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "lulu",
+      "display_name": "Lulu",
+      "actor": "ada",
+      "voice": "tts_mid_warm",
+      "layers": {
+        "headwear": "fringe"
+      },
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "witch",
+      "display_name": "The Witch",
+      "actor": "rosa",
+      "voice": "tts_bright_young",
+      "layers": {
+        "headwear": "witch_hat",
+        "front_prop": "wand"
+      },
+      "default_expression": "neutral"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "neutral": "flash://actors/miss_moon/expr/neutral",
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted",
+          "giggling": "flash://actors/miss_moon/expr/giggling",
+          "curious": "flash://actors/miss_moon/expr/curious",
+          "surprised": "flash://actors/miss_moon/expr/surprised",
+          "sad": "flash://actors/miss_moon/expr/sad",
+          "sleepy": "flash://actors/miss_moon/expr/sleepy",
+          "yawning": "flash://actors/miss_moon/expr/yawning"
+        }
+      },
+      {
+        "id": "bruno",
+        "base_uri": "flash://actors/bruno/base",
+        "expressions": {
+          "neutral": "flash://actors/bruno/expr/neutral",
+          "happy": "flash://actors/bruno/expr/happy",
+          "sad": "flash://actors/bruno/expr/sad",
+          "surprised": "flash://actors/bruno/expr/surprised",
+          "angry": "flash://actors/bruno/expr/angry",
+          "scared": "flash://actors/bruno/expr/scared"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy",
+          "sad": "flash://actors/milo/expr/sad",
+          "surprised": "flash://actors/milo/expr/surprised",
+          "angry": "flash://actors/milo/expr/angry",
+          "scared": "flash://actors/milo/expr/scared"
+        }
+      },
+      {
+        "id": "ada",
+        "base_uri": "flash://actors/ada/base",
+        "expressions": {
+          "neutral": "flash://actors/ada/expr/neutral",
+          "happy": "flash://actors/ada/expr/happy",
+          "sad": "flash://actors/ada/expr/sad",
+          "surprised": "flash://actors/ada/expr/surprised",
+          "angry": "flash://actors/ada/expr/angry",
+          "scared": "flash://actors/ada/expr/scared"
+        }
+      },
+      {
+        "id": "rosa",
+        "base_uri": "flash://actors/rosa/base",
+        "expressions": {
+          "neutral": "flash://actors/rosa/expr/neutral",
+          "happy": "flash://actors/rosa/expr/happy",
+          "sad": "flash://actors/rosa/expr/sad",
+          "surprised": "flash://actors/rosa/expr/surprised",
+          "angry": "flash://actors/rosa/expr/angry",
+          "scared": "flash://actors/rosa/expr/scared"
+        }
+      },
+      {
+        "id": "pip",
+        "base_uri": "flash://actors/pip/base",
+        "expressions": {
+          "neutral": "flash://actors/pip/expr/neutral",
+          "happy": "flash://actors/pip/expr/happy",
+          "sad": "flash://actors/pip/expr/sad",
+          "surprised": "flash://actors/pip/expr/surprised",
+          "angry": "flash://actors/pip/expr/angry",
+          "scared": "flash://actors/pip/expr/scared"
+        }
+      },
+      {
+        "id": "tuk",
+        "base_uri": "flash://actors/tuk/base",
+        "expressions": {
+          "neutral": "flash://actors/tuk/expr/neutral",
+          "happy": "flash://actors/tuk/expr/happy",
+          "sad": "flash://actors/tuk/expr/sad",
+          "surprised": "flash://actors/tuk/expr/surprised",
+          "angry": "flash://actors/tuk/expr/angry",
+          "scared": "flash://actors/tuk/expr/scared"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 4538
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 2570
+      },
+      {
+        "id": "aud_002",
+        "kind": "line",
+        "uri": "audio/aud_002.wav",
+        "format": "wav",
+        "duration_ms": 2940
+      },
+      {
+        "id": "aud_003",
+        "kind": "line",
+        "uri": "audio/aud_003.wav",
+        "format": "wav",
+        "duration_ms": 2160
+      },
+      {
+        "id": "aud_004",
+        "kind": "line",
+        "uri": "audio/aud_004.wav",
+        "format": "wav",
+        "duration_ms": 4080
+      },
+      {
+        "id": "aud_005",
+        "kind": "line",
+        "uri": "audio/aud_005.wav",
+        "format": "wav",
+        "duration_ms": 2300
+      },
+      {
+        "id": "aud_006",
+        "kind": "line",
+        "uri": "audio/aud_006.wav",
+        "format": "wav",
+        "duration_ms": 3400
+      },
+      {
+        "id": "aud_007",
+        "kind": "line",
+        "uri": "audio/aud_007.wav",
+        "format": "wav",
+        "duration_ms": 2820
+      },
+      {
+        "id": "aud_008",
+        "kind": "line",
+        "uri": "audio/aud_008.wav",
+        "format": "wav",
+        "duration_ms": 1660
+      },
+      {
+        "id": "aud_009",
+        "kind": "line",
+        "uri": "audio/aud_009.wav",
+        "format": "wav",
+        "duration_ms": 2210
+      },
+      {
+        "id": "aud_010",
+        "kind": "line",
+        "uri": "audio/aud_010.wav",
+        "format": "wav",
+        "duration_ms": 2070
+      },
+      {
+        "id": "aud_011",
+        "kind": "line",
+        "uri": "audio/aud_011.wav",
+        "format": "wav",
+        "duration_ms": 3100
+      },
+      {
+        "id": "aud_012",
+        "kind": "line",
+        "uri": "audio/aud_012.wav",
+        "format": "wav",
+        "duration_ms": 3340
+      },
+      {
+        "id": "aud_013",
+        "kind": "line",
+        "uri": "audio/aud_013.wav",
+        "format": "wav",
+        "duration_ms": 2470
+      },
+      {
+        "id": "aud_014",
+        "kind": "line",
+        "uri": "audio/aud_014.wav",
+        "format": "wav",
+        "duration_ms": 3600
+      },
+      {
+        "id": "aud_015",
+        "kind": "line",
+        "uri": "audio/aud_015.wav",
+        "format": "wav",
+        "duration_ms": 2400
+      },
+      {
+        "id": "aud_016",
+        "kind": "line",
+        "uri": "audio/aud_016.wav",
+        "format": "wav",
+        "duration_ms": 2890
+      },
+      {
+        "id": "sfx_shing",
+        "kind": "sfx",
+        "uri": "audio/sfx_shing.wav",
+        "format": "wav",
+        "duration_ms": 500
+      },
+      {
+        "id": "sfx_sparkle",
+        "kind": "sfx",
+        "uri": "audio/sfx_sparkle.wav",
+        "format": "wav",
+        "duration_ms": 900
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 1010
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "neutral",
+      "text": "Once upon a time there was a girl called Lulu, who had a really long fringe.",
+      "line_audio": "aud_000",
+      "sfx": [],
+      "duration_ms": 4838,
+      "animation": "speak"
+    },
+    {
+      "index": 1,
+      "character_id": "lulu",
+      "expression": "sad",
+      "text": "My fringe is so long I can't see where I'm going!",
+      "line_audio": "aud_001",
+      "sfx": [],
+      "duration_ms": 2870,
+      "animation": "speak"
+    },
+    {
+      "index": 2,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "So Lulu took her scissors and went snip, snip, snip.",
+      "line_audio": "aud_002",
+      "sfx": [
+        {
+          "audio": "sfx_shing",
+          "at_ms": 2110
+        }
+      ],
+      "duration_ms": 3240,
+      "animation": "speak"
+    },
+    {
+      "index": 3,
+      "character_id": "lulu",
+      "expression": "surprised",
+      "text": "It grew back! Even longer than before!",
+      "line_audio": "aud_003",
+      "sfx": [
+        {
+          "audio": "sfx_sparkle",
+          "at_ms": 260
+        }
+      ],
+      "duration_ms": 2460,
+      "animation": "speak"
+    },
+    {
+      "index": 4,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "She cut it again. And again. And every time, it grew right back.",
+      "line_audio": "aud_004",
+      "sfx": [
+        {
+          "audio": "sfx_shing",
+          "at_ms": 980
+        }
+      ],
+      "duration_ms": 4380,
+      "animation": "speak"
+    },
+    {
+      "index": 5,
+      "character_id": "lulu",
+      "expression": "sad",
+      "text": "I will never, ever be rid of this fringe.",
+      "line_audio": "aud_005",
+      "sfx": [],
+      "duration_ms": 2600,
+      "animation": "speak"
+    },
+    {
+      "index": 6,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "So Lulu went to find the magical witch who lived in the woods.",
+      "line_audio": "aud_006",
+      "sfx": [],
+      "duration_ms": 3700,
+      "animation": "speak"
+    },
+    {
+      "index": 7,
+      "character_id": "witch",
+      "expression": "neutral",
+      "text": "A fringe that grows back? Oh, I know just the spell.",
+      "line_audio": "aud_007",
+      "sfx": [],
+      "duration_ms": 3120,
+      "animation": "speak"
+    },
+    {
+      "index": 8,
+      "character_id": "witch",
+      "expression": "happy",
+      "text": "Higgledy, piggledy... BALD!",
+      "line_audio": "aud_008",
+      "sfx": [
+        {
+          "audio": "sfx_sparkle",
+          "at_ms": 1110
+        }
+      ],
+      "duration_ms": 1960,
+      "animation": "speak"
+    },
+    {
+      "index": 9,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "And poof! Every single hair was gone.",
+      "line_audio": "aud_009",
+      "sfx": [],
+      "duration_ms": 2510,
+      "animation": "speak"
+    },
+    {
+      "index": 10,
+      "character_id": "lulu",
+      "expression": "surprised",
+      "layers": {
+        "headwear": null
+      },
+      "text": "Ooh! My head is as shiny as a marble!",
+      "line_audio": "aud_010",
+      "sfx": [],
+      "duration_ms": 2370,
+      "animation": "speak"
+    },
+    {
+      "index": 11,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "Then slowly, slowly, her hair started growing back.",
+      "line_audio": "aud_011",
+      "sfx": [
+        {
+          "audio": "sfx_sparkle",
+          "at_ms": 2320
+        }
+      ],
+      "duration_ms": 3400,
+      "animation": "speak"
+    },
+    {
+      "index": 12,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "It grew and grew and grew, and the fringe never came back!",
+      "line_audio": "aud_012",
+      "sfx": [],
+      "duration_ms": 3640,
+      "animation": "speak"
+    },
+    {
+      "index": 13,
+      "character_id": "lulu",
+      "expression": "happy",
+      "layers": {
+        "headwear": null
+      },
+      "text": "My hair is really, really, REALLY long!",
+      "line_audio": "aud_013",
+      "sfx": [],
+      "duration_ms": 2770,
+      "animation": "speak"
+    },
+    {
+      "index": 14,
+      "character_id": "miss_moon",
+      "expression": "giggling",
+      "text": "So long that Lulu still needed every single one of her clips.",
+      "line_audio": "aud_014",
+      "sfx": [],
+      "duration_ms": 3900,
+      "animation": "speak"
+    },
+    {
+      "index": 15,
+      "character_id": "lulu",
+      "expression": "happy",
+      "layers": {
+        "headwear": null
+      },
+      "text": "One clip. Two clips. Ten clips! Perfect.",
+      "line_audio": "aud_015",
+      "sfx": [],
+      "duration_ms": 2700,
+      "animation": "speak"
+    },
+    {
+      "index": 16,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "And Lulu never needed scissors again. The end.",
+      "line_audio": "aud_016",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 1780
+        }
+      ],
+      "duration_ms": 3190,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}

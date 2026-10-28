@@ -1,0 +1,465 @@
+{
+  "schema_version": 2,
+  "id": "perf_knight_lonely_dragon",
+  "title": "The Knight and the Lonely Dragon",
+  "cast": [
+    {
+      "character_id": "miss_moon",
+      "display_name": "Miss Moon",
+      "actor": "miss_moon",
+      "voice": "tts_moon_host",
+      "default_expression": "happy"
+    },
+    {
+      "character_id": "knight",
+      "display_name": "Sir Milo",
+      "actor": "milo",
+      "voice": "tts_mid_earnest",
+      "layers": {
+        "headwear": "helmet",
+        "front_prop": "sword"
+      },
+      "default_expression": "neutral"
+    },
+    {
+      "character_id": "princess",
+      "display_name": "Princess Rosa",
+      "actor": "rosa",
+      "voice": "tts_bright_young",
+      "layers": {
+        "headwear": "tiara"
+      },
+      "default_expression": "neutral"
+    },
+    {
+      "character_id": "dragon",
+      "display_name": "the dragon",
+      "actor": "tuk",
+      "voice": "tts_low_rumble",
+      "layers": {
+        "headwear": "horns"
+      },
+      "default_expression": "neutral"
+    }
+  ],
+  "assets": {
+    "actors": [
+      {
+        "id": "miss_moon",
+        "base_uri": "flash://actors/miss_moon/base",
+        "expressions": {
+          "neutral": "flash://actors/miss_moon/expr/neutral",
+          "happy": "flash://actors/miss_moon/expr/happy",
+          "delighted": "flash://actors/miss_moon/expr/delighted",
+          "giggling": "flash://actors/miss_moon/expr/giggling",
+          "curious": "flash://actors/miss_moon/expr/curious",
+          "surprised": "flash://actors/miss_moon/expr/surprised",
+          "sad": "flash://actors/miss_moon/expr/sad",
+          "sleepy": "flash://actors/miss_moon/expr/sleepy",
+          "yawning": "flash://actors/miss_moon/expr/yawning"
+        }
+      },
+      {
+        "id": "bruno",
+        "base_uri": "flash://actors/bruno/base",
+        "expressions": {
+          "neutral": "flash://actors/bruno/expr/neutral",
+          "happy": "flash://actors/bruno/expr/happy",
+          "sad": "flash://actors/bruno/expr/sad",
+          "surprised": "flash://actors/bruno/expr/surprised",
+          "angry": "flash://actors/bruno/expr/angry",
+          "scared": "flash://actors/bruno/expr/scared"
+        }
+      },
+      {
+        "id": "milo",
+        "base_uri": "flash://actors/milo/base",
+        "expressions": {
+          "neutral": "flash://actors/milo/expr/neutral",
+          "happy": "flash://actors/milo/expr/happy",
+          "sad": "flash://actors/milo/expr/sad",
+          "surprised": "flash://actors/milo/expr/surprised",
+          "angry": "flash://actors/milo/expr/angry",
+          "scared": "flash://actors/milo/expr/scared"
+        }
+      },
+      {
+        "id": "ada",
+        "base_uri": "flash://actors/ada/base",
+        "expressions": {
+          "neutral": "flash://actors/ada/expr/neutral",
+          "happy": "flash://actors/ada/expr/happy",
+          "sad": "flash://actors/ada/expr/sad",
+          "surprised": "flash://actors/ada/expr/surprised",
+          "angry": "flash://actors/ada/expr/angry",
+          "scared": "flash://actors/ada/expr/scared"
+        }
+      },
+      {
+        "id": "rosa",
+        "base_uri": "flash://actors/rosa/base",
+        "expressions": {
+          "neutral": "flash://actors/rosa/expr/neutral",
+          "happy": "flash://actors/rosa/expr/happy",
+          "sad": "flash://actors/rosa/expr/sad",
+          "surprised": "flash://actors/rosa/expr/surprised",
+          "angry": "flash://actors/rosa/expr/angry",
+          "scared": "flash://actors/rosa/expr/scared"
+        }
+      },
+      {
+        "id": "pip",
+        "base_uri": "flash://actors/pip/base",
+        "expressions": {
+          "neutral": "flash://actors/pip/expr/neutral",
+          "happy": "flash://actors/pip/expr/happy",
+          "sad": "flash://actors/pip/expr/sad",
+          "surprised": "flash://actors/pip/expr/surprised",
+          "angry": "flash://actors/pip/expr/angry",
+          "scared": "flash://actors/pip/expr/scared"
+        }
+      },
+      {
+        "id": "tuk",
+        "base_uri": "flash://actors/tuk/base",
+        "expressions": {
+          "neutral": "flash://actors/tuk/expr/neutral",
+          "happy": "flash://actors/tuk/expr/happy",
+          "sad": "flash://actors/tuk/expr/sad",
+          "surprised": "flash://actors/tuk/expr/surprised",
+          "angry": "flash://actors/tuk/expr/angry",
+          "scared": "flash://actors/tuk/expr/scared"
+        }
+      }
+    ],
+    "audio": [
+      {
+        "id": "aud_000",
+        "kind": "line",
+        "uri": "audio/aud_000.wav",
+        "format": "wav",
+        "duration_ms": 3250
+      },
+      {
+        "id": "aud_001",
+        "kind": "line",
+        "uri": "audio/aud_001.wav",
+        "format": "wav",
+        "duration_ms": 3730
+      },
+      {
+        "id": "aud_002",
+        "kind": "line",
+        "uri": "audio/aud_002.wav",
+        "format": "wav",
+        "duration_ms": 1600
+      },
+      {
+        "id": "aud_003",
+        "kind": "line",
+        "uri": "audio/aud_003.wav",
+        "format": "wav",
+        "duration_ms": 3650
+      },
+      {
+        "id": "aud_004",
+        "kind": "line",
+        "uri": "audio/aud_004.wav",
+        "format": "wav",
+        "duration_ms": 2560
+      },
+      {
+        "id": "aud_005",
+        "kind": "line",
+        "uri": "audio/aud_005.wav",
+        "format": "wav",
+        "duration_ms": 1990
+      },
+      {
+        "id": "aud_006",
+        "kind": "line",
+        "uri": "audio/aud_006.wav",
+        "format": "wav",
+        "duration_ms": 1500
+      },
+      {
+        "id": "aud_007",
+        "kind": "line",
+        "uri": "audio/aud_007.wav",
+        "format": "wav",
+        "duration_ms": 1960
+      },
+      {
+        "id": "aud_009",
+        "kind": "line",
+        "uri": "audio/aud_009.wav",
+        "format": "wav",
+        "duration_ms": 1610
+      },
+      {
+        "id": "aud_010",
+        "kind": "line",
+        "uri": "audio/aud_010.wav",
+        "format": "wav",
+        "duration_ms": 2820
+      },
+      {
+        "id": "aud_011",
+        "kind": "line",
+        "uri": "audio/aud_011.wav",
+        "format": "wav",
+        "duration_ms": 2330
+      },
+      {
+        "id": "aud_012",
+        "kind": "line",
+        "uri": "audio/aud_012.wav",
+        "format": "wav",
+        "duration_ms": 1680
+      },
+      {
+        "id": "aud_013",
+        "kind": "line",
+        "uri": "audio/aud_013.wav",
+        "format": "wav",
+        "duration_ms": 1610
+      },
+      {
+        "id": "aud_014",
+        "kind": "line",
+        "uri": "audio/aud_014.wav",
+        "format": "wav",
+        "duration_ms": 3150
+      },
+      {
+        "id": "sfx_whoosh",
+        "kind": "sfx",
+        "uri": "audio/sfx_whoosh.wav",
+        "format": "wav",
+        "duration_ms": 700
+      },
+      {
+        "id": "sfx_roar",
+        "kind": "sfx",
+        "uri": "audio/sfx_roar.wav",
+        "format": "wav",
+        "duration_ms": 900
+      },
+      {
+        "id": "sfx_shing",
+        "kind": "sfx",
+        "uri": "audio/sfx_shing.wav",
+        "format": "wav",
+        "duration_ms": 500
+      },
+      {
+        "id": "sfx_fire",
+        "kind": "sfx",
+        "uri": "audio/sfx_fire.wav",
+        "format": "wav",
+        "duration_ms": 1200
+      },
+      {
+        "id": "sfx_chime",
+        "kind": "sfx",
+        "uri": "audio/sfx_chime.wav",
+        "format": "wav",
+        "duration_ms": 1010
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "index": 0,
+      "character_id": "miss_moon",
+      "expression": "delighted",
+      "text": "In a green kingdom lived a brave knight named Sir Milo.",
+      "line_audio": "aud_000",
+      "sfx": [],
+      "duration_ms": 3550,
+      "animation": "speak"
+    },
+    {
+      "index": 1,
+      "character_id": "miss_moon",
+      "expression": "surprised",
+      "text": "One day a dragon carried Princess Rosa off to a dark mountain!",
+      "line_audio": "aud_001",
+      "sfx": [
+        {
+          "audio": "sfx_whoosh",
+          "at_ms": 420
+        }
+      ],
+      "duration_ms": 4030,
+      "animation": "speak"
+    },
+    {
+      "index": 2,
+      "character_id": "knight",
+      "expression": "angry",
+      "text": "I will bring the princess home!",
+      "line_audio": "aud_002",
+      "sfx": [],
+      "duration_ms": 1900,
+      "animation": "speak"
+    },
+    {
+      "index": 3,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "He traveled three days, over hills and rivers, to the mountain.",
+      "line_audio": "aud_003",
+      "sfx": [],
+      "duration_ms": 3950,
+      "animation": "speak"
+    },
+    {
+      "index": 4,
+      "character_id": "miss_moon",
+      "expression": "curious",
+      "text": "At the mouth of a cave, something was waiting…",
+      "line_audio": "aud_004",
+      "sfx": [],
+      "duration_ms": 2860,
+      "animation": "speak"
+    },
+    {
+      "index": 5,
+      "character_id": "dragon",
+      "expression": "angry",
+      "text": "Who dares enter MY mountain?",
+      "line_audio": "aud_005",
+      "sfx": [
+        {
+          "audio": "sfx_roar",
+          "at_ms": 0
+        }
+      ],
+      "duration_ms": 2290,
+      "animation": "speak"
+    },
+    {
+      "index": 6,
+      "character_id": "princess",
+      "expression": "scared",
+      "text": "Sir Milo! Help me, please!",
+      "line_audio": "aud_006",
+      "sfx": [],
+      "duration_ms": 1800,
+      "animation": "speak"
+    },
+    {
+      "index": 7,
+      "character_id": "knight",
+      "expression": "angry",
+      "text": "Stand back, dragon!",
+      "line_audio": "aud_007",
+      "sfx": [
+        {
+          "audio": "sfx_shing",
+          "at_ms": 270
+        }
+      ],
+      "duration_ms": 2260,
+      "animation": "speak"
+    },
+    {
+      "index": 8,
+      "character_id": "dragon",
+      "expression": "angry",
+      "layers": {
+        "front_prop": "fire"
+      },
+      "text": "(breathes fire)",
+      "line_audio": null,
+      "sfx": [
+        {
+          "audio": "sfx_fire",
+          "at_ms": 0
+        }
+      ],
+      "duration_ms": 1800,
+      "animation": "none"
+    },
+    {
+      "index": 9,
+      "character_id": "knight",
+      "expression": "scared",
+      "text": "Wait — why are you so angry?",
+      "line_audio": "aud_009",
+      "sfx": [],
+      "duration_ms": 1910,
+      "animation": "speak"
+    },
+    {
+      "index": 10,
+      "character_id": "dragon",
+      "expression": "sad",
+      "text": "No one ever visits. I am always alone.",
+      "line_audio": "aud_010",
+      "sfx": [],
+      "duration_ms": 3120,
+      "animation": "speak"
+    },
+    {
+      "index": 11,
+      "character_id": "knight",
+      "expression": "happy",
+      "layers": {
+        "front_prop": null
+      },
+      "text": "Then let's be friends. Come to our kingdom!",
+      "line_audio": "aud_011",
+      "sfx": [],
+      "duration_ms": 2630,
+      "animation": "speak"
+    },
+    {
+      "index": 12,
+      "character_id": "princess",
+      "expression": "happy",
+      "text": "You're not so scary after all.",
+      "line_audio": "aud_012",
+      "sfx": [],
+      "duration_ms": 1980,
+      "animation": "speak"
+    },
+    {
+      "index": 13,
+      "character_id": "dragon",
+      "expression": "happy",
+      "text": "(a warm, rumbly laugh)",
+      "line_audio": "aud_013",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 900
+        }
+      ],
+      "duration_ms": 1910,
+      "animation": "speak"
+    },
+    {
+      "index": 14,
+      "character_id": "miss_moon",
+      "expression": "happy",
+      "text": "So the dragon flew them home, and was never lonely again.",
+      "line_audio": "aud_014",
+      "sfx": [
+        {
+          "audio": "sfx_chime",
+          "at_ms": 0
+        }
+      ],
+      "duration_ms": 3450,
+      "animation": "speak"
+    }
+  ],
+  "stage": {
+    "devices": [
+      "d1"
+    ],
+    "default_device": "d1"
+  }
+}
