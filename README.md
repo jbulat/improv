@@ -130,9 +130,7 @@ While the pipeline is being developed, a person approves the beat table before a
 
 Every line becomes a voice clip in its actor's voice, and beat durations are measured from those clips, so pictures and narration agree by construction. The device fetches the audio over the local network and checks every file's size and CRC32 before the story goes live ([Workflows](WORKFLOWS.md#playing-it-on-the-device)). The simulator and the device run the same Lua file, and no model runs during playback.
 
-<p align="center">
-  <a href="docs/media/knight-and-lonely-dragon-kokoro.mp4"><img src="docs/media/knight-and-lonely-dragon-kokoro-poster.jpg" width="270" alt="Play the video: The Knight and the Lonely Dragon, 44 seconds with voices and sound effects. The still shows the horned dragon breathing white-gold fire inside a drawing of the device."></a>
-</p>
+https://github.com/user-attachments/assets/466f687b-ce5d-4780-8351-09a37805c2bd
 
 <p align="center"><em>The whole story, 44 seconds with sound. Voices: <a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro</a> (Apache 2.0).</em></p>
 
