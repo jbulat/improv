@@ -26,8 +26,6 @@ README's opening clip.
 
 https://github.com/user-attachments/assets/51f2729e-b1e7-46dc-886f-c200ebb04fe2
 
-A dragon who is very bad at being mean wants to be a dog instead. *66 seconds.*
-
 | | |
 |---|---|
 | **Watch for** | His roar at 0:13, which comes out as fire; and his very best woof at 0:41, which comes out as fire again. |
@@ -45,9 +43,6 @@ A dragon who is very bad at being mean wants to be a dog instead. *66 seconds.*
 > use her clips with her hair was still really really really really really really really long
 
 https://github.com/user-attachments/assets/d737c8ca-0a01-48fd-aa5e-0339749c182b
-
-A fringe that grows back every time Lulu cuts it, until a witch tries a bigger spell.
-*58 seconds.*
 
 | | |
 |---|---|
@@ -71,9 +66,6 @@ A fringe that grows back every time Lulu cuts it, until a witch tries a bigger s
 
 https://github.com/user-attachments/assets/d656e28f-5b43-4b16-902e-4d7843399a1d
 
-A dog follows the smell of sausages into the village, and the shopkeeper follows the dog.
-*65 seconds.*
-
 | | |
 |---|---|
 | **Watch for** | The shopkeeper at 0:21, and the hiding place at 0:45. |
@@ -93,8 +85,6 @@ A dog follows the smell of sausages into the village, and the shopkeeper follows
 > ever after
 
 https://github.com/user-attachments/assets/c71aad47-eb38-44b0-873c-85b360d3e600
-
-A girl moves to a new country and has no one to play with, until a dog helps. *58 seconds.*
 
 | | |
 |---|---|
