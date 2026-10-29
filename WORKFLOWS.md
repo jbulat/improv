@@ -160,7 +160,8 @@ size.
 npm run export:video -- --bundle fixtures/knight-and-lonely-dragon --out docs/media/knight-and-lonely-dragon-kokoro.mp4
 ```
 
-Run it again after a change to a voice or to the story, so the video keeps up.
+Run it again after a change to a voice or to the story, so the video keeps up. The README plays
+an uploaded copy, not this file, so upload the new one too (see the next section).
 
 ## The examples' videos
 
@@ -193,6 +194,12 @@ ffmpeg -ss 11.6 -t 6 -i docs/media/examples/$s.mp4 -loop 0 \
 
 After a change to a story, export its video again, cut its GIF again, and check the times in
 `EXAMPLES.md`.
+
+The pages do not play these files. GitHub plays a video inline only from an upload, so
+`EXAMPLES.md` and the README each show a `user-attachments` URL, on its own line. After you export a
+video again, upload it: in the public repository, open a new issue, drag the `.mp4` into the comment
+box, copy the URL GitHub writes there, and close the issue without submitting it. Then replace the
+old URL. Uploads are kept by GitHub, not by this repository.
 
 ## The social preview card
 
