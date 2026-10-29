@@ -175,7 +175,7 @@ What the prototype does *not* handle, such as authenticated delivery, is listed 
 | Document | Read it for |
 |---|---|
 | [Examples](EXAMPLES.md) | Four more stories, each with the child's own words and a video. |
-| [Getting started](GETTING-STARTED.md) | Install, generate audio, run the simulator. |
+| [Getting started](GETTING-STARTED.md) | Install, set up voices, run the simulator. |
 | [Workflows](WORKFLOWS.md) | Every tool, delivery, and known limits. |
 | [Design decisions](DESIGN-DECISIONS.md) | Ten decisions, a paragraph each. Start here if you read one more thing. |
 | [System design](improv-design.md) | Pipeline, data model, playback loop. |
