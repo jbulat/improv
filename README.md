@@ -66,13 +66,13 @@ The cast becomes a beat timeline: who is on screen, how they feel, what they say
 
 | beat | seconds | actor | role | text | expression | sfx | layers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 5 | 2.11 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
-| 6 | 2.27 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
-| 7 | 1.88 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.2s` | headwear=helmet; front_prop=sword |
+| 5 | 2.29 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
+| 6 | 1.80 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
+| 7 | 2.26 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.3s` | headwear=helmet; front_prop=sword |
 | 8 | 1.80 | tuk | the dragon | (breathes fire) | angry | `sfx_fire@0.0s` | headwear=horns; front_prop=fire |
-| 9 | 2.09 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
-| 10 | 3.85 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
-| 11 | 2.97 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
+| 9 | 1.91 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
+| 10 | 3.12 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
+| 11 | 2.63 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
 
 At beat 8, the dragon breathes fire, using `front_prop=fire`. At beat 11, Sir Milo puts his sword away.
 
@@ -81,21 +81,21 @@ At beat 8, the dragon breathes fire, using `front_prop=fire`. At beat 11, Sir Mi
 
 | beat | seconds | actor | role | text | expression | sfx | layers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 3.23 | miss_moon | Miss Moon | In a green kingdom lived a brave knight named Sir Milo. | delighted |  |  |
-| 1 | 3.78 | miss_moon | Miss Moon | One day a dragon carried Princess Rosa off to a dark mountain! | surprised | `sfx_whoosh@0.4s` |  |
-| 2 | 1.88 | milo | Sir Milo | I will bring the princess home! | angry |  | headwear=helmet; front_prop=sword |
-| 3 | 4.06 | miss_moon | Miss Moon | He traveled three days, over hills and rivers, to the mountain. | curious |  |  |
-| 4 | 2.79 | miss_moon | Miss Moon | At the mouth of a cave, something was waiting… | curious |  |  |
-| 5 | 2.11 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
-| 6 | 2.27 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
-| 7 | 1.88 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.2s` | headwear=helmet; front_prop=sword |
+| 0 | 3.55 | miss_moon | Miss Moon | In a green kingdom lived a brave knight named Sir Milo. | delighted |  |  |
+| 1 | 4.03 | miss_moon | Miss Moon | One day a dragon carried Princess Rosa off to a dark mountain! | surprised | `sfx_whoosh@0.4s` |  |
+| 2 | 1.90 | milo | Sir Milo | I will bring the princess home! | angry |  | headwear=helmet; front_prop=sword |
+| 3 | 3.95 | miss_moon | Miss Moon | He traveled three days, over hills and rivers, to the mountain. | curious |  |  |
+| 4 | 2.86 | miss_moon | Miss Moon | At the mouth of a cave, something was waiting… | curious |  |  |
+| 5 | 2.29 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
+| 6 | 1.80 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
+| 7 | 2.26 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.3s` | headwear=helmet; front_prop=sword |
 | 8 | 1.80 | tuk | the dragon | (breathes fire) | angry | `sfx_fire@0.0s` | headwear=horns; front_prop=fire |
-| 9 | 2.09 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
-| 10 | 3.85 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
-| 11 | 2.97 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
-| 12 | 1.81 | rosa | Princess Rosa | You're not so scary after all. | happy |  | headwear=tiara |
-| 13 | 1.44 | tuk | the dragon | (a warm, rumbly laugh) | happy | `sfx_chime@0.6s` | headwear=horns |
-| 14 | 3.57 | miss_moon | Miss Moon | So the dragon flew them home, and was never lonely again. | happy | `sfx_chime@0.0s` |  |
+| 9 | 1.91 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
+| 10 | 3.12 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
+| 11 | 2.63 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
+| 12 | 1.98 | rosa | Princess Rosa | You're not so scary after all. | happy |  | headwear=tiara |
+| 13 | 1.91 | tuk | the dragon | (a warm, rumbly laugh) | happy | `sfx_chime@0.9s` | headwear=horns |
+| 14 | 3.45 | miss_moon | Miss Moon | So the dragon flew them home, and was never lonely again. | happy | `sfx_chime@0.0s` |  |
 
 </details>
 
