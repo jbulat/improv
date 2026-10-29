@@ -8,7 +8,7 @@
 
 Improv is a pocket-sized improv troupe for children's stories. Hand it a story, and the same six pixel-art actors perform it. An AI casts the story and writes the stage directions, and a handheld device puts on the show, with a voice for every character and props and sound effects on cue.
 
-Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human: broad, tall, medium and small. Pip and Tuk are a small and a large animal. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
+Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human; Pip and Tuk are animals. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
 
 It's a working prototype, on real hardware and in a simulator. Claude Code skills do the AI work.
 
