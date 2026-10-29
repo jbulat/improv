@@ -36,15 +36,15 @@
     "all": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run build:viewer"
   },
   "devDependencies": {
-    "@eslint/js": "^9",
-    "@types/node": "^22",
+    "@eslint/js": "^10",
+    "@types/node": "^26",
     "ajv": "^8",
-    "eslint": "^9",
-    "globals": "^15",
+    "eslint": "^10",
+    "globals": "^17",
     "prettier": "^3",
     "tsx": "^4",
-    "typescript": "^5",
+    "typescript": "^7",
     "typescript-eslint": "^8",
-    "vitest": "^4.1.12"
+    "vitest": "^5.0.5"
   }
 }
