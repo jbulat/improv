@@ -74,7 +74,7 @@ The cast becomes a beat timeline: who is on screen, how they feel, what they say
 | 10 | 3.85 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
 | 11 | 2.97 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
 
-Beat 8 is the only beat where the dragon wears fire. The fire is white-gold, because Tuk's chest is orange and an orange flame would vanish into him. At beat 11, Sir Milo puts his sword away.
+At beat 8, the dragon breathes fire, using `front_prop=fire`. At beat 11, Sir Milo puts his sword away.
 
 <details>
 <summary>All fifteen beats (the real output of <code>npm run export:story</code>)</summary>
