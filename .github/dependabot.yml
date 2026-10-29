@@ -1,11 +1,16 @@
 # Dependency updates, grouped so each ecosystem opens at most one pull request a month.
 # Security updates are separate: Dependabot opens those as soon as an advisory appears.
+# Major npm versions are skipped: they change APIs and peer ranges (TypeScript 7 broke
+# typescript-eslint 8), so they are upgraded by hand.
 version: 2
 updates:
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: monthly
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     groups:
       npm:
         patterns: ["*"]
