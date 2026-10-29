@@ -15,18 +15,38 @@ This is built around a specific, deliberately low-cost stack. The device is a **
 | Device | **M5 StickS3** (ESP32-S3, 8MB PSRAM, 1.14" LCD, IMU, mic/speaker, IR, battery) | Displays sprites, plays audio. Playback only. |
 | On-device runtime | **Resident** (Inanimate) | C++ sandboxed **Lua** runtime with hot-reload over WebSocket. The playback app is Lua, pushed from the cloud. |
 | Connectivity | **Courier** (composed by Resident) | WiFi, WebSocket, MQTT, UDP multicast, self-healing reconnection. |
-| Cloud | Designed, not built | All AI (STT, story LLM, director LLM, TTS) plus the asset pipeline. In this prototype the Claude Code skills and macOS `say` stand in for it. |
+| Cloud | Designed, not built | All AI (STT, story LLM, director LLM, TTS) plus the asset pipeline. In this prototype, Claude Code skills and Kokoro, run locally, stand in for it. |
 | Dev workflow | **Claude Code** + the Resident agent plugin | Flash firmware, write the device driver layer, iterate Lua apps via hot reload. |
 
 **Note on Resident:** it's a library you compile into firmware, not a flash-and-go OS. Standing up a new device is a one-time job: bring up the board in PlatformIO, add the sandbox, write C++ drivers that expose the StickS3's hardware (LCD, buttons, audio, buzzer) to Lua, and document that surface in a `DEVICE-SKILL.md`. That's done now: this repo owns a `device/` PlatformIO project and a repo-root [`DEVICE-SKILL.md`](DEVICE-SKILL.md). Standing up the driver layer happened on Resident, in this repo, not by depending on the upstream demo. After that, the fast loop is pushing Lua apps over the air.
 
 ## Install
 
-Prerequisites: Node 20 or later and `npm ci`, plus a `lua` interpreter on PATH (`brew install lua` on macOS; verified against 5.4 and 5.5). The headless Lua tests and `build:app`'s syntax check both shell out to it. The pure TypeScript tools (validate, preview:art, preview:audio, export:story) do **not** need Lua. The test suite also needs a C++ compiler (`c++`, for the firmware's host tests) and a git checkout, and two of its tests fail when it runs as root, because root ignores the file permissions they rely on. Rendering line audio (`gen:audio`) needs Kokoro and ffmpeg; see below.
+To watch a story in the simulator, you need:
+
+- **Git**, to clone the repo.
+- **Node.js 20 or later**, with npm.
+- **A `lua` interpreter on PATH**, version 5.4 or 5.5 (`brew install lua` on macOS). The
+  simulator runs the app in it, and `build:app` checks the app's syntax with it.
+- **A web browser.**
+
+Then install the packages:
 
 ```sh
 npm ci
 ```
+
+Other tasks need more:
+
+| To | You also need |
+|---|---|
+| Run the tests (`npm test`) | A C++ compiler on PATH (`c++`), for the firmware's host tests, and a git clone rather than a downloaded archive. Run them as a normal user: two tests fail as root, which ignores the file permissions they check. |
+| Export a video (`npm run export:video`) | ffmpeg. |
+| Render new voice lines (`npm run gen:audio`) | Kokoro, `python3`, `curl` and ffmpeg. See [Voices](#voices). |
+| Build and flash the firmware | PlatformIO and an M5 StickS3. See [Setting up the device](WORKFLOWS.md#setting-up-the-device). |
+
+The TypeScript-only tools (`validate`, `preview:art`, `preview:audio`, `export:story`) need only
+Node.
 
 ## Voices
 

@@ -8,7 +8,7 @@
 
 Improv is a pocket-sized improv troupe for children's stories. Hand it a story, and the same six pixel-art actors perform it. An AI casts the story and writes the stage directions, and a handheld device puts on the show, with a voice for every character and props and sound effects on cue.
 
-Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human: broad, tall, medium and small. Pip and Tuk are a small and a large animal. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
+Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human; Pip and Tuk are animals. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
 
 It's a working prototype, on real hardware and in a simulator. Claude Code skills do the AI work.
 
@@ -19,7 +19,7 @@ It's a working prototype, on real hardware and in a simulator. Claude Code skill
 Serious engineering behind child's play:
 
 - **AI output with guardrails and controls.** The AI casts onto a constrained vocabulary of actors, props and voices. A deterministic validator with no model inside rejects any story that breaks its rules. [See it reject a story](#3-validate), or read [`validator.ts`](tools/lib/validator.ts).
-- **End to end, from firmware to AI pipeline.** C++ firmware on an ESP32-S3, with over-the-air story delivery checked file by file ([`StorySync.cpp`](device/lib/drivers/src/StorySync.cpp)); a Lua playback app on Inanimate's Resident runtime ([`player.lua`](device-apps/improv/src/player.lua)); a TypeScript toolchain that validates, builds and simulates stories ([`build-app.ts`](tools/build-app.ts)); and Claude Code skills as the AI stages ([`story-create`](.claude/skills/story-create/SKILL.md)).
+- **End to end, from firmware to AI pipeline.** C++ firmware on an ESP32-S3, with over-the-air story delivery checked file by file ([`StorySync.cpp`](device/lib/drivers/src/StorySync.cpp)); a Lua playback app ([`player.lua`](device-apps/improv/src/player.lua)); a TypeScript toolchain that validates, builds and simulates stories ([`build-app.ts`](tools/build-app.ts)); and Claude Code skills as the AI stages ([`story-create`](.claude/skills/story-create/SKILL.md)).
 - **Built with coding agents, verified by a person.** Designs approved before code, layered reviews, and hardware sessions that caught what the agents' reviews missed. [How I built this](#how-i-built-this).
 
 ---
@@ -39,7 +39,7 @@ flowchart LR
 
 The beat timeline is the contract between the AI and the device: Direct writes it, and the device reads it. It's defined by a JSON Schema, and everything on either side of it is swappable.
 
-The casting rules work at two levels: the AI is told each rule and the reason for it, and plain code checks the result before anything is built.
+The AI is told each casting rule and its reason; plain code then checks the result.
 
 ### 1. Author
 
@@ -51,7 +51,7 @@ Every story must suit the youngest listener, a five-year-old at bedtime. An AI c
 
 ### 2. Direct
 
-The AI's first job is not to draw anything. It is to cast and script the story.
+First, the AI casts the story onto the troupe:
 
 | Role | Actor | Dressed with | Voice |
 |---|---|---|---|
@@ -66,36 +66,36 @@ The cast becomes a beat timeline: who is on screen, how they feel, what they say
 
 | beat | seconds | actor | role | text | expression | sfx | layers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 5 | 2.11 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
-| 6 | 2.27 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
-| 7 | 1.88 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.2s` | headwear=helmet; front_prop=sword |
+| 5 | 2.29 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
+| 6 | 1.80 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
+| 7 | 2.26 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.3s` | headwear=helmet; front_prop=sword |
 | 8 | 1.80 | tuk | the dragon | (breathes fire) | angry | `sfx_fire@0.0s` | headwear=horns; front_prop=fire |
-| 9 | 2.09 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
-| 10 | 3.85 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
-| 11 | 2.97 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
+| 9 | 1.91 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
+| 10 | 3.12 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
+| 11 | 2.63 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
 
-Beat 8 is the only beat where the dragon wears fire. The fire is white-gold, because Tuk's chest is orange and an orange flame would vanish into him. At beat 11, Sir Milo puts his sword away.
+At beat 8, the dragon breathes fire, using `front_prop=fire`. At beat 11, Sir Milo puts his sword away.
 
 <details>
 <summary>All fifteen beats (the real output of <code>npm run export:story</code>)</summary>
 
 | beat | seconds | actor | role | text | expression | sfx | layers |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 3.23 | miss_moon | Miss Moon | In a green kingdom lived a brave knight named Sir Milo. | delighted |  |  |
-| 1 | 3.78 | miss_moon | Miss Moon | One day a dragon carried Princess Rosa off to a dark mountain! | surprised | `sfx_whoosh@0.4s` |  |
-| 2 | 1.88 | milo | Sir Milo | I will bring the princess home! | angry |  | headwear=helmet; front_prop=sword |
-| 3 | 4.06 | miss_moon | Miss Moon | He traveled three days, over hills and rivers, to the mountain. | curious |  |  |
-| 4 | 2.79 | miss_moon | Miss Moon | At the mouth of a cave, something was waiting… | curious |  |  |
-| 5 | 2.11 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
-| 6 | 2.27 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
-| 7 | 1.88 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.2s` | headwear=helmet; front_prop=sword |
+| 0 | 3.55 | miss_moon | Miss Moon | In a green kingdom lived a brave knight named Sir Milo. | delighted |  |  |
+| 1 | 4.03 | miss_moon | Miss Moon | One day a dragon carried Princess Rosa off to a dark mountain! | surprised | `sfx_whoosh@0.4s` |  |
+| 2 | 1.90 | milo | Sir Milo | I will bring the princess home! | angry |  | headwear=helmet; front_prop=sword |
+| 3 | 3.95 | miss_moon | Miss Moon | He traveled three days, over hills and rivers, to the mountain. | curious |  |  |
+| 4 | 2.86 | miss_moon | Miss Moon | At the mouth of a cave, something was waiting… | curious |  |  |
+| 5 | 2.29 | tuk | the dragon | Who dares enter MY mountain? | angry | `sfx_roar@0.0s` | headwear=horns |
+| 6 | 1.80 | rosa | Princess Rosa | Sir Milo! Help me, please! | scared |  | headwear=tiara |
+| 7 | 2.26 | milo | Sir Milo | Stand back, dragon! | angry | `sfx_shing@0.3s` | headwear=helmet; front_prop=sword |
 | 8 | 1.80 | tuk | the dragon | (breathes fire) | angry | `sfx_fire@0.0s` | headwear=horns; front_prop=fire |
-| 9 | 2.09 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
-| 10 | 3.85 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
-| 11 | 2.97 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
-| 12 | 1.81 | rosa | Princess Rosa | You're not so scary after all. | happy |  | headwear=tiara |
-| 13 | 1.44 | tuk | the dragon | (a warm, rumbly laugh) | happy | `sfx_chime@0.6s` | headwear=horns |
-| 14 | 3.57 | miss_moon | Miss Moon | So the dragon flew them home, and was never lonely again. | happy | `sfx_chime@0.0s` |  |
+| 9 | 1.91 | milo | Sir Milo | Wait — why are you so angry? | scared |  | headwear=helmet; front_prop=sword |
+| 10 | 3.12 | tuk | the dragon | No one ever visits. I am always alone. | sad |  | headwear=horns |
+| 11 | 2.63 | milo | Sir Milo | Then let's be friends. Come to our kingdom! | happy |  | headwear=helmet |
+| 12 | 1.98 | rosa | Princess Rosa | You're not so scary after all. | happy |  | headwear=tiara |
+| 13 | 1.91 | tuk | the dragon | (a warm, rumbly laugh) | happy | `sfx_chime@0.9s` | headwear=horns |
+| 14 | 3.45 | miss_moon | Miss Moon | So the dragon flew them home, and was never lonely again. | happy | `sfx_chime@0.0s` |  |
 
 </details>
 
@@ -113,6 +113,7 @@ Break a rule and the build refuses:
 ```
 ERROR   [ACTOR_DOUBLED] /cast/2/actor — actor "milo" already plays "hero" — one role per actor
 ERROR   [LAYER_MISFIT] /cast/1/layers/headwear — layer "horns" fits [tuk], not actor "milo"
+
 ERROR   [MISS_MOON_MISCAST] /cast/1 — miss_moon never plays a story role (got role "hero")
 ERROR   [ACTOR_DOUBLED] /cast/1/actor — actor "miss_moon" already plays "miss_moon" — one role per actor
 ERROR   [VOICE_NOT_SIGNATURE] /cast/1/voice — actor "miss_moon" always speaks with "tts_moon_host", got "tts_mid_earnest"
@@ -120,11 +121,9 @@ ERROR   [VOICE_NOT_SIGNATURE] /cast/1/voice — actor "miss_moon" always speaks 
 
 The last three lines come from one attempt to cast Miss Moon as a hero: three separate rules catch it.
 
-The validator is deterministic: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no model inside, so the same story always gets the same verdict, and every failure is explainable, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build refuses any story that fails.
+The validator is **deterministic**: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no AI model, so a story always gets the same verdict. Every failure is **explainable**, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build is a **guardrail** that refuses an invalid story.
 
-**Where the casting rules came from.** Before the validator existed, I drafted this story with an AI as beat tables under different constraints, and kept the constraints that worked. Some came from thinking about the child watching. One actor, one role is the clearest: a child knows a character by face and voice, so an actor playing two parts would look and sound like one character with two names.
-
-While the pipeline is being developed, a person approves the beat table before anything is built. The everyday skill skips that step, never the validator.
+While the pipeline is being developed, a person approves each beat table before it is built. The everyday skill skips that step, never the validator: no story reaches a child until code has checked it.
 
 ### 4. Render, distribute, play
 
@@ -132,7 +131,7 @@ Every line becomes a voice clip in its actor's voice, and beat durations are mea
 
 https://github.com/user-attachments/assets/466f687b-ce5d-4780-8351-09a37805c2bd
 
-<p align="center"><em>The whole story, 44 seconds with sound. Voices: <a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro</a> (Apache 2.0).</em></p>
+<p align="center"><em>The whole story, 44 seconds with sound.</em></p>
 
 <p align="center">More stories, each from a child's idea: <a href="EXAMPLES.md"><strong>Examples</strong></a></p>
 
@@ -151,11 +150,9 @@ Every feature went through the same AI-assisted development loop, with three hum
 
 1. **A short design**, approved before any code.
 2. **A test-first plan**, built task by task, with a layered review: the agent that wrote the code, a separate review agent that sent work back and asked me product and quality questions, then me on the pull request, mostly through the review comments and test coverage. Generating code moves the bottleneck to review, so the layers are arranged to spend my attention on product and quality questions rather than line-by-line reading.
-3. **A hardware session** for anything the simulator can't prove.
+3. **A hardware session** for anything the simulator can't prove. It caught at least one firmware bug that had passed the agents' code reviews.
 
-The design and plan steps come from [Superpowers](https://github.com/obra/superpowers), a Claude Code plugin. I added the hardware sessions, two [story skills](.claude/) (a fast one for a child, a debug one for the pipeline) that are the Author and Direct stages, and the deterministic validator.
-
-The clearest example is over-the-air delivery. A firmware bug passed the agents' code reviews, then surfaced in the first hardware session: the device's story sync never ran unless an app was already loaded. The simulator couldn't have caught it, because it implements the same protocol a second time. [The working documents for that feature](docs/process/ota-delivery/) are in the repo.
+The design and plan steps come from [Superpowers](https://github.com/obra/superpowers), a Claude Code plugin, and the device runs on [Resident](https://github.com/inanimate-tech/resident), a Lua runtime for small devices from [Inanimate](https://inanimate.tech).
 
 ---
 
@@ -165,7 +162,7 @@ The clearest example is over-the-air delivery. A firmware bug passed the agents'
 - Eight stories, including an onboarding story where Miss Moon introduces the troupe.
 - Delivery over the air: two full transfers, of 17 and 19 files, arrived byte-exact with no retries. Corrupted manifests and path-traversal attempts are rejected.
 - A simulator that runs the same Lua file as the device and doubles as a headless test harness, inside a suite of 858 automated tests that includes the firmware's C++.
-- Not built: the cloud pipeline, for which Claude Code skills and Kokoro, run locally, stand in.
+- Not built: the cloud pipeline, for which Claude Code skills and [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), run locally, stand in.
 
 What the prototype does *not* handle, such as authenticated delivery, is listed plainly in [Workflows](WORKFLOWS.md#known-limits-of-delivery).
 
@@ -176,7 +173,7 @@ What the prototype does *not* handle, such as authenticated delivery, is listed 
 | Document | Read it for |
 |---|---|
 | [Examples](EXAMPLES.md) | Four more stories, each with the child's own words and a video. |
-| [Getting started](GETTING-STARTED.md) | Install, generate audio, run the simulator. |
+| [Getting started](GETTING-STARTED.md) | Install, set up voices, run the simulator. |
 | [Workflows](WORKFLOWS.md) | Every tool, delivery, and known limits. |
 | [Design decisions](DESIGN-DECISIONS.md) | Ten decisions, a paragraph each. Start here if you read one more thing. |
 | [System design](improv-design.md) | Pipeline, data model, playback loop. |
