@@ -131,7 +131,7 @@ Every line becomes a voice clip in its actor's voice, and beat durations are mea
 
 https://github.com/user-attachments/assets/466f687b-ce5d-4780-8351-09a37805c2bd
 
-<p align="center"><em>The whole story, 44 seconds with sound. Voices: <a href="https://huggingface.co/hexgrad/Kokoro-82M">Kokoro</a> (Apache 2.0).</em></p>
+<p align="center"><em>The whole story, 44 seconds with sound.</em></p>
 
 <p align="center">More stories, each from a child's idea: <a href="EXAMPLES.md"><strong>Examples</strong></a></p>
 
@@ -164,7 +164,7 @@ The clearest example is over-the-air delivery. A firmware bug passed the agents'
 - Eight stories, including an onboarding story where Miss Moon introduces the troupe.
 - Delivery over the air: two full transfers, of 17 and 19 files, arrived byte-exact with no retries. Corrupted manifests and path-traversal attempts are rejected.
 - A simulator that runs the same Lua file as the device and doubles as a headless test harness, inside a suite of 858 automated tests that includes the firmware's C++.
-- Not built: the cloud pipeline, for which Claude Code skills and Kokoro, run locally, stand in.
+- Not built: the cloud pipeline, for which Claude Code skills and [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), run locally, stand in.
 
 What the prototype does *not* handle, such as authenticated delivery, is listed plainly in [Workflows](WORKFLOWS.md#known-limits-of-delivery).
 
