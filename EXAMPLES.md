@@ -5,7 +5,7 @@ Each story here began as a child's idea, quoted as they said it. Only the names 
 The device then performed it: every voice, costume and sound effect below is the same one the
 StickS3 plays.
 
-Click a picture to watch with sound. Each story is also plain data: the **performance** link opens
+Each video plays with sound. Each story is also plain data: the **performance** link opens
 the `performance.json` the device plays.
 
 New to the troupe? [Meet them first](README.md): Miss Moon introduces all six actors in the
@@ -26,7 +26,7 @@ README's opening clip.
 >
 > — child, age 11
 
-[![Wilfred the Friendly Dragon: Wilfred, a red dragon with horns, roars and breathes fire, then apologises](docs/media/examples/wilfred-the-friendly-dragon.gif)](docs/media/examples/wilfred-the-friendly-dragon.mp4)
+https://github.com/user-attachments/assets/51f2729e-b1e7-46dc-886f-c200ebb04fe2
 
 A dragon who is very bad at being mean wants to be a dog instead. *66 seconds.*
 
@@ -47,7 +47,7 @@ comes out as fire again.
 >
 > — child, age 11
 
-[![Lulu and the Fringe That Grew Back: a witch casts a spell, and Lulu's fringe is gone](docs/media/examples/lulu-and-the-fringe-that-grew-back.gif)](docs/media/examples/lulu-and-the-fringe-that-grew-back.mp4)
+https://github.com/user-attachments/assets/d737c8ca-0a01-48fd-aa5e-0339749c182b
 
 A fringe that grows back every time Lulu cuts it, until a witch tries a bigger spell.
 *58 seconds.*
@@ -73,7 +73,7 @@ fringe is a costume layer, so the spell simply takes it off.
 >
 > — child, age 7
 
-[![Noodle the Doggie: Noodle finds a sausage, and the shopkeeper shouts at him to come back](docs/media/examples/noodle-the-doggie-walks-down-the-street.gif)](docs/media/examples/noodle-the-doggie-walks-down-the-street.mp4)
+https://github.com/user-attachments/assets/d656e28f-5b43-4b16-902e-4d7843399a1d
 
 A dog follows the smell of sausages into the village, and the shopkeeper follows the dog.
 *65 seconds.*
@@ -96,7 +96,7 @@ A dog follows the smell of sausages into the village, and the shopkeeper follows
 >
 > — child, age 7
 
-[![A Dog Called Bear: Bear, a fluffy dog, says hello, and Marisol smiles](docs/media/examples/a-dog-called-bear.gif)](docs/media/examples/a-dog-called-bear.mp4)
+https://github.com/user-attachments/assets/c71aad47-eb38-44b0-873c-85b360d3e600
 
 A girl moves to a new country and has no one to play with, until a dog helps. *58 seconds.*
 
