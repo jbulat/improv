@@ -152,9 +152,9 @@ Every feature went through the same AI-assisted development loop, with three hum
 2. **A test-first plan**, built task by task, with a layered review: the agent that wrote the code, a separate review agent that sent work back and asked me product and quality questions, then me on the pull request, mostly through the review comments and test coverage. Generating code moves the bottleneck to review, so the layers are arranged to spend my attention on product and quality questions rather than line-by-line reading.
 3. **A hardware session** for anything the simulator can't prove.
 
-The design and plan steps come from [Superpowers](https://github.com/obra/superpowers), a Claude Code plugin. I added the hardware sessions, two [story skills](.claude/) (a fast one for a child, a debug one for the pipeline) that are the Author and Direct stages, and the deterministic validator. The device runs on [Resident](https://github.com/inanimate-tech/resident), a Lua runtime for small devices from [Inanimate](https://inanimate.tech).
+The design and plan steps come from [Superpowers](https://github.com/obra/superpowers), a Claude Code plugin, and the device runs on [Resident](https://github.com/inanimate-tech/resident), a Lua runtime for small devices from [Inanimate](https://inanimate.tech).
 
-The clearest example is over-the-air delivery. A firmware bug passed the agents' code reviews, then surfaced in the first hardware session: the device's story sync never ran unless an app was already loaded. The simulator couldn't have caught it, because it implements the same protocol a second time. [The working documents for that feature](docs/process/ota-delivery/) are in the repo.
+Step 3 earned its place in over-the-air delivery. A firmware bug passed the agents' code reviews, then surfaced in the first hardware session: the device's story sync never ran unless an app was already loaded. The simulator couldn't have caught it, because it implements the same protocol a second time. [The working documents for that feature](docs/process/ota-delivery/) are in the repo.
 
 ---
 
