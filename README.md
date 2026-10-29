@@ -113,6 +113,7 @@ Break a rule and the build refuses:
 ```
 ERROR   [ACTOR_DOUBLED] /cast/2/actor — actor "milo" already plays "hero" — one role per actor
 ERROR   [LAYER_MISFIT] /cast/1/layers/headwear — layer "horns" fits [tuk], not actor "milo"
+
 ERROR   [MISS_MOON_MISCAST] /cast/1 — miss_moon never plays a story role (got role "hero")
 ERROR   [ACTOR_DOUBLED] /cast/1/actor — actor "miss_moon" already plays "miss_moon" — one role per actor
 ERROR   [VOICE_NOT_SIGNATURE] /cast/1/voice — actor "miss_moon" always speaks with "tts_moon_host", got "tts_mid_earnest"
