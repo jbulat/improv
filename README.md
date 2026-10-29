@@ -121,7 +121,7 @@ ERROR   [VOICE_NOT_SIGNATURE] /cast/1/voice — actor "miss_moon" always speaks 
 
 The last three lines come from one attempt to cast Miss Moon as a hero: three separate rules catch it.
 
-The validator is deterministic: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no model inside, so the same story always gets the same verdict, and every failure is explainable, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build refuses any story that fails.
+The validator is **deterministic**: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no AI model used, so a story always gets the same deterministic validation outcome. Every failure is **explainable**, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build is a **guardrail** that refuses an invalid story.
 
 **Where the casting rules came from.** Before the validator existed, I drafted this story with an AI as beat tables under different constraints, and kept the constraints that worked. Some came from thinking about the child watching. One actor, one role is the clearest: a child knows a character by face and voice, so an actor playing two parts would look and sound like one character with two names.
 
