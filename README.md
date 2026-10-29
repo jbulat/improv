@@ -19,7 +19,7 @@ It's a working prototype, on real hardware and in a simulator. Claude Code skill
 Serious engineering behind child's play:
 
 - **AI output with guardrails and controls.** The AI casts onto a constrained vocabulary of actors, props and voices. A deterministic validator with no model inside rejects any story that breaks its rules. [See it reject a story](#3-validate), or read [`validator.ts`](tools/lib/validator.ts).
-- **End to end, from firmware to AI pipeline.** C++ firmware on an ESP32-S3, with over-the-air story delivery checked file by file ([`StorySync.cpp`](device/lib/drivers/src/StorySync.cpp)); a Lua playback app on Inanimate's Resident runtime ([`player.lua`](device-apps/improv/src/player.lua)); a TypeScript toolchain that validates, builds and simulates stories ([`build-app.ts`](tools/build-app.ts)); and Claude Code skills as the AI stages ([`story-create`](.claude/skills/story-create/SKILL.md)).
+- **End to end, from firmware to AI pipeline.** C++ firmware on an ESP32-S3, with over-the-air story delivery checked file by file ([`StorySync.cpp`](device/lib/drivers/src/StorySync.cpp)); a Lua playback app ([`player.lua`](device-apps/improv/src/player.lua)); a TypeScript toolchain that validates, builds and simulates stories ([`build-app.ts`](tools/build-app.ts)); and Claude Code skills as the AI stages ([`story-create`](.claude/skills/story-create/SKILL.md)).
 - **Built with coding agents, verified by a person.** Designs approved before code, layered reviews, and hardware sessions that caught what the agents' reviews missed. [How I built this](#how-i-built-this).
 
 ---
@@ -39,7 +39,7 @@ flowchart LR
 
 The beat timeline is the contract between the AI and the device: Direct writes it, and the device reads it. It's defined by a JSON Schema, and everything on either side of it is swappable.
 
-The casting rules work at two levels: the AI is told each rule and the reason for it, and plain code checks the result before anything is built.
+The AI is told each casting rule and its reason; plain code then checks the result.
 
 ### 1. Author
 
@@ -51,7 +51,7 @@ Every story must suit the youngest listener, a five-year-old at bedtime. An AI c
 
 ### 2. Direct
 
-The AI's first job is not to draw anything. It is to cast and script the story.
+First, the AI casts the story onto the troupe:
 
 | Role | Actor | Dressed with | Voice |
 |---|---|---|---|
