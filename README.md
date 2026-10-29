@@ -123,8 +123,6 @@ The last three lines come from one attempt to cast Miss Moon as a hero: three se
 
 The validator is **deterministic**: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no AI model, so a story always gets the same verdict. Every failure is **explainable**, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build is a **guardrail** that refuses an invalid story.
 
-**Where the casting rules came from.** Before the validator existed, I drafted this story with an AI as beat tables under different constraints, and kept the constraints that worked. Some came from thinking about the child watching. One actor, one role is the clearest: a child knows a character by face and voice, so an actor playing two parts would look and sound like one character with two names.
-
 While the pipeline is being developed, a person approves the beat table before anything is built. The everyday skill skips that step, never the validator.
 
 ### 4. Render, distribute, play
