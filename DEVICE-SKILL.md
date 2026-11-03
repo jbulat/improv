@@ -1,7 +1,7 @@
 # Improv StickS3
 
-The Improv StickS3 is a wrist-sized ESP32-S3 playback terminal: M5Stack
-StickS3, 8 MB flash, 8 MB PSRAM, a 1.14" 135×240 portrait TFT, two physical
+The Improv StickS3 is a wrist-sized ESP32-S3 playback terminal: M5StickS3,
+8 MB flash, 8 MB PSRAM, a 1.14" 135×240 portrait TFT, two physical
 buttons, and an I2S speaker. It has no on-device intelligence — it composites
 pre-rendered sprite frames and plays pre-rendered WAV clips against a beat
 timeline pushed from the cloud. Apps drive the screen as their primary output,

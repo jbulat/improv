@@ -8,7 +8,7 @@ was built; this page keeps the reasoning and drops the working documents.
 Every story is performed by the same six actors (`bruno`, `milo`, `ada`, `rosa`, `pip`, `tuk`)
 and one host, Miss Moon. The AI director *casts* a story onto them; it never draws anything. This
 turns an open-ended generation problem into a small, checkable one: the director's output is a
-list of ids, and every id either exists in [`troupe/troupe.json`](troupe/troupe.json) or it does
+list of ids, and every id either exists in [`troupe/troupe.json`](../troupe/troupe.json) or it does
 not. It also suits the audience. A child recognises the troupe from story to story, the way they
 recognise a puppet company, and project-specific pixel art on a 135×240 screen stays legible and charming
 where generated art would not. When a story wants something the troupe lacks, the rule is to
@@ -18,11 +18,11 @@ restructure the staging first (the dragon flies everyone home, instead of needin
 
 Everything compiles to one `Performance` JSON: the cast, the assets, and an ordered list of beats
 (who is on screen, their expression, the line and its clip, the sound-effect cues, the duration).
-Its shape is a JSON Schema ([`schema/performance.schema.json`](schema/performance.schema.json)),
-and its meaning is checked by [`tools/lib/validator.ts`](tools/lib/validator.ts): 25 rules (23 errors
+Its shape is a JSON Schema ([`schema/performance.schema.json`](../schema/performance.schema.json)),
+and its meaning is checked by [`tools/lib/validator.ts`](../tools/lib/validator.ts): 25 rules (23 errors
 and 2 warnings), from an unknown actor to a sound cue past the end of its beat. The validator is plain code, kept apart from
 any model, so a failure is always the same failure and always has a name. `build:app` refuses a
-story with an error, and [`fixtures/invalid/`](fixtures/invalid/) holds a broken Performance for every
+story with an error, and [`fixtures/invalid/`](../fixtures/invalid/) holds a broken Performance for every
 error rule except the two that read audio files, so the rules are documented by examples that the
 tests run.
 
@@ -85,13 +85,13 @@ run, with a readable message on the screen instead of garbled sprites.
 
 A story's audio is about 1.7 MB, which is far too much to push through a relay built for small
 Lua apps. So the Mac serves the bundle over HTTP on the local network
-([`tools/serve-bundle.ts`](tools/serve-bundle.ts)), and only a small JSON `story_fetch` announce
+([`tools/serve-bundle.ts`](../tools/serve-bundle.ts)), and only a small JSON `story_fetch` announce
 goes through the relay. The device pulls each file, checks its size and CRC32, writes into a
 temporary folder, and publishes the story with a rename. It keeps several stories and evicts the
 oldest when space runs short, so the author never thinks about the flash budget. The app itself
 still travels the way it already did, pushed over the relay; only the audio needed a new path.
-`WORKFLOWS.md` lists what this prototype does not handle, such as authentication
-([Known limits of delivery](WORKFLOWS.md#known-limits-of-delivery)).
+`workflows.md` lists what this prototype does not handle, such as authentication
+([Known limits of delivery](workflows.md#known-limits-of-delivery)).
 
 ## 9. The device keeps working with no network
 
@@ -105,7 +105,7 @@ save when the content has not changed, so a reboot does not rewrite flash every 
 ## 10. The AI co-author is a skill, and the story stays the child's
 
 In this prototype the Author and Director stages are Claude Code skills
-([`.claude/skills/story-create/`](.claude/skills/story-create/SKILL.md)), not a cloud service. The
+([`.claude/skills/story-create/`](../.claude/skills/story-create/SKILL.md)), not a cloud service. The
 skill is built around one clock: the seconds between a child telling a story and seeing it play.
 So it has no approval gates on the fast path. It asks one to three questions, one at a time, to
 draw out the child's idea, then fills the remaining gaps itself and builds the story. The child's

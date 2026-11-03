@@ -10,7 +10,9 @@ Improv is a pocket-sized improv troupe for children's stories. Hand it a story, 
 
 Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human; Pip and Tuk are animals. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
 
-It's a working prototype, on real hardware and in a simulator. Claude Code skills do the AI work.
+It's a working prototype. Stories play on real hardware, an M5StickS3 (ESP32-S3, 1.14-inch screen), and in a simulator. Claude Code skills do the AI work.
+
+**[Watch four example stories, all created by children →](docs/examples.md)**
 
 ---
 
@@ -121,23 +123,23 @@ ERROR   [VOICE_NOT_SIGNATURE] /cast/1/voice — actor "miss_moon" always speaks 
 
 The last three lines come from one attempt to cast Miss Moon as a hero: three separate rules catch it.
 
-The validator is **deterministic**: [25 rules](WORKFLOWS.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no AI model, so a story always gets the same verdict. Every failure is **explainable**, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build is a **guardrail** that refuses an invalid story.
+The validator is **deterministic**: [25 rules](docs/workflows.md#the-validators-rules) of [plain code](tools/lib/validator.ts) with no AI model, so a story always gets the same verdict. Every failure is **explainable**, naming the rule, the field and the reason. 21 of its 23 error rules have a broken example in [`fixtures/invalid/`](fixtures/invalid/), and the build is a **guardrail** that refuses an invalid story.
 
 While the pipeline is being developed, a person approves each beat table before it is built. The everyday skill skips that step, never the validator: no story reaches a child until code has checked it.
 
 ### 4. Render, distribute, play
 
-Every line becomes a voice clip in its actor's voice, and beat durations are measured from those clips, so pictures and narration agree by construction. The device fetches the audio over the local network and checks every file's size and CRC32 before the story goes live ([Workflows](WORKFLOWS.md#playing-it-on-the-device)). The simulator and the device run the same Lua file, and no model runs during playback.
+Every line becomes a voice clip in its actor's voice, and beat durations are measured from those clips, so pictures and narration agree by construction. The device fetches the audio over the local network and checks every file's size and CRC32 before the story goes live ([Workflows](docs/workflows.md#playing-it-on-the-device)). The simulator and the device run the same Lua file, and no model runs during playback.
 
 https://github.com/user-attachments/assets/466f687b-ce5d-4780-8351-09a37805c2bd
 
 <p align="center"><em>The whole story, 44 seconds with sound.</em></p>
 
-<p align="center">More stories, each from a child's idea: <a href="EXAMPLES.md"><strong>Examples</strong></a></p>
+<p align="center">More stories, each from a child's idea: <a href="docs/examples.md"><strong>Examples</strong></a></p>
 
 <p align="center">
-  <img src="docs/media/sticks3-princess-mia.jpg" width="200" alt="The M5 StickS3 on a stand, playing a story: Princess Mia, in a tiara and holding a wand, on its small portrait screen.">
-  <img src="docs/media/sticks3-miss-moon.jpg" width="200" alt="The M5 StickS3 on a stand, with Miss Moon winking on its small portrait screen.">
+  <img src="docs/media/sticks3-princess-mia.jpg" width="200" alt="The M5StickS3 on a stand, playing a story: Princess Mia, in a tiara and holding a wand, on its small portrait screen.">
+  <img src="docs/media/sticks3-miss-moon.jpg" width="200" alt="The M5StickS3 on a stand, with Miss Moon winking on its small portrait screen.">
 </p>
 
 ---
@@ -158,13 +160,13 @@ The design and plan steps come from [Superpowers](https://github.com/obra/superp
 
 ## What's built, and what isn't
 
-- Proven on hardware: an M5 StickS3 (ESP32-S3, 1.14-inch screen) plays stories end to end, with pacing, layered sound effects, pause and resume, and restart.
+- Proven on hardware: an M5StickS3 (ESP32-S3, 1.14-inch screen) plays stories end to end, with pacing, layered sound effects, pause and resume, and restart.
 - Eight stories, including an onboarding story where Miss Moon introduces the troupe.
 - Delivery over the air: two full transfers, of 17 and 19 files, arrived byte-exact with no retries. Corrupted manifests and path-traversal attempts are rejected.
 - A simulator that runs the same Lua file as the device and doubles as a headless test harness, inside a suite of 858 automated tests that includes the firmware's C++.
 - Not built: the cloud pipeline, for which Claude Code skills and [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), run locally, stand in.
 
-What the prototype does *not* handle, such as authenticated delivery, is listed plainly in [Workflows](WORKFLOWS.md#known-limits-of-delivery).
+What the prototype does *not* handle, such as authenticated delivery, is listed plainly in [Workflows](docs/workflows.md#known-limits-of-delivery).
 
 ---
 
@@ -172,13 +174,13 @@ What the prototype does *not* handle, such as authenticated delivery, is listed 
 
 | Document | Read it for |
 |---|---|
-| [Examples](EXAMPLES.md) | Four more stories, each with the child's own words and a video. |
-| [Getting started](GETTING-STARTED.md) | Install, set up voices, run the simulator. |
-| [Workflows](WORKFLOWS.md) | Every tool, delivery, and known limits. |
-| [Design decisions](DESIGN-DECISIONS.md) | Ten decisions, a paragraph each. Start here if you read one more thing. |
-| [System design](improv-design.md) | Pipeline, data model, playback loop. |
-| [The troupe](improv-troupe.md) | Actors, layers, casting rules. |
-| [Storyboard](improv-storyboard.md) | The Knight cast two ways. |
+| [Examples](docs/examples.md) | Four more stories, each with the child's own words and a video. |
+| [Getting started](docs/getting-started.md) | Install, set up voices, run the simulator. |
+| [Workflows](docs/workflows.md) | Every tool, delivery, and known limits. |
+| [Design decisions](docs/design-decisions.md) | Ten decisions, a paragraph each. Start here if you read one more thing. |
+| [System design](docs/design.md) | Pipeline, data model, playback loop. |
+| [The troupe](docs/troupe.md) | Actors, layers, casting rules. |
+| [Storyboard](docs/storyboard.md) | The Knight cast two ways. |
 | [How a feature was built](docs/process/ota-delivery/) | One feature's design and plan, with hardware results. |
 | [Device surface](DEVICE-SKILL.md) | The StickS3's Lua modules. |
 

@@ -31,7 +31,7 @@ function actor(id: string) {
 
 // Layers that are HAIR rather than headgear, with the one head each belongs
 // to. The catalog has no flag for this because it needs none anywhere else --
-// improv-troupe.md's rule is the source: a fringe *is* hair, so it is
+// docs/troupe.md's rule is the source: a fringe *is* hair, so it is
 // authored in one head's hair colour and can only ever match that head. Keep
 // this in step with troupe.json: art drawn in a specific actor's hair colour
 // belongs here; an object that merely sits on a head does not.
@@ -194,7 +194,7 @@ describe("art inventory", () => {
 
   // The other half of the same rule, and the one the containment test above
   // cannot see. Hair is authored in its wearer's own hair colour (see
-  // improv-troupe.md's author-once-stops-at-the-hairline rule), so every
+  // docs/troupe.md's author-once-stops-at-the-hairline rule), so every
   // pixel of it that lands on hair rather than on the face is drawn in the
   // colour already underneath it and shows NOTHING. A hair layer could pass
   // "never leaves the silhouette" by disappearing into the head entirely.

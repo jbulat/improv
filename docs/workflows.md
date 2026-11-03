@@ -1,7 +1,7 @@
 # Workflows
 
 Every tool, with its commands and flags. To install and play your first story, start with
-[`GETTING-STARTED.md`](GETTING-STARTED.md).
+[`getting-started.md`](getting-started.md).
 
 - [Preview a character's art](#preview-a-characters-art)
 - [Hear a story on the computer](#hear-a-story-on-the-computer)
@@ -56,7 +56,7 @@ The AI Author → Director pipeline was designed as cloud work and never built. 
 
 In a Claude Code session, the `story-create` skill drives this whole workflow interactively. The child supplies the idea, and the skill asks between one and three questions to draw it out (always at least one, a "yes, and" when the idea needs no filling in), co-writes the rest, runs the build steps below, sanity-checks the result with a headless play-through, and gets the story playing in the local sim (or on the device with `--device`). It shows the measured beat table afterwards, as a record rather than a gate: the clock that matters is the seconds between a child telling their story and seeing it. `story-create-debug` is the same work with the full creation-time test pass (beat-table approval before building, `npm test`, and dual sign-off) for developing and debugging the pipeline rather than making a story with a child. In this prototype the two skills *are* the Author and Direct stages.
 
-1. **Write `performance.json`.** Cast each role onto an actor + voice, then write the beat timeline (`character_id`, `expression`, `text`, `sfx`). Follow `schema/performance.schema.json` and the casting rules in [`improv-troupe.md`](improv-troupe.md); the existing bundles are the templates. Optionally add `spoken-overrides.json` (audio id → the text TTS should speak, when it differs from the on-screen text).
+1. **Write `performance.json`.** Cast each role onto an actor + voice, then write the beat timeline (`character_id`, `expression`, `text`, `sfx`). Follow `schema/performance.schema.json` and the casting rules in [`troupe.md`](troupe.md); the existing bundles are the templates. Optionally add `spoken-overrides.json` (audio id → the text TTS should speak, when it differs from the on-screen text).
 2. **Render sfx.** `npm run gen:sfx -- --bundle <dir>` (deterministic chiptune; it writes the sounds the bundle's manifest lists).
 3. **Render line audio + measure durations.** `npm run gen:audio -- --bundle <dir> --write-durations`. This renders one WAV per line and patches the measured clip durations back into `performance.json`, so beat pacing is real. (Kokoro, installed once with `npm run setup:kokoro`; a cloud TTS would slot in here unchanged.) Durations are the only thing it patches: if a re-render changes a clip's length on a beat that carries `sfx` cues, it warns and lists those cues, because their `at_ms` offsets were written against the old clip and are not rescaled. Re-check them by ear.
 4. **Validate.** `npm run validate -- <dir>/performance.json --check-files`. Every reference must resolve and every asset file must exist.
@@ -77,7 +77,7 @@ npm run export:story -- --bundle fixtures/knight-and-lonely-dragon --csv    # CS
 
 ## The validator's rules
 
-The validator, [`tools/lib/validator.ts`](tools/lib/validator.ts), is plain code with no model
+The validator, [`tools/lib/validator.ts`](../tools/lib/validator.ts), is plain code with no model
 inside, so the same story always gets the same result. Each failure prints the rule's name, the
 path to the field, and the reason:
 
@@ -88,36 +88,36 @@ Run it with `npm run validate -- <dir>/performance.json`. `build:app` runs it to
 build.
 
 There are 25 rules: 23 errors and 2 warnings. Each broken example in
-[`fixtures/invalid/`](fixtures/invalid/) is a story built to break one rule, and `npm test` checks
+[`fixtures/invalid/`](../fixtures/invalid/) is a story built to break one rule, and `npm test` checks
 that it still does. `npm run gen:invalid` regenerates them.
 
 | Rule | Level | What it checks | Broken example |
 |---|---|---|---|
-| `SHAPE` | error | The file matches the JSON Schema, [`schema/performance.schema.json`](schema/performance.schema.json). | [`bad-shape-missing-cast`](fixtures/invalid/bad-shape-missing-cast.json) |
-| `MISS_MOON_MISSING` | error | Miss Moon is cast as the host. | [`bad-missing-miss-moon`](fixtures/invalid/bad-missing-miss-moon.json) |
-| `MISS_MOON_MISCAST` | error | Miss Moon plays no story role, and only she plays the host. | [`bad-moon-cast-in-role`](fixtures/invalid/bad-moon-cast-in-role.json) |
-| `UNKNOWN_ACTOR` | error | Every cast actor is in the troupe. | [`bad-unknown-actor`](fixtures/invalid/bad-unknown-actor.json) |
-| `DUPLICATE_CHARACTER` | error | No two roles share a character id. | [`bad-duplicate-character`](fixtures/invalid/bad-duplicate-character.json) |
-| `ACTOR_DOUBLED` | error | No actor plays two roles. | [`bad-actor-doubled`](fixtures/invalid/bad-actor-doubled.json) |
-| `VOICE_NOT_SIGNATURE` | error | Each role speaks in its actor's own voice. | [`bad-voice-not-actor-signature`](fixtures/invalid/bad-voice-not-actor-signature.json) |
-| `BAD_EXPRESSION` | error | Every expression, a role's default and each beat's, belongs to that actor. | [`bad-expression-for-actor`](fixtures/invalid/bad-expression-for-actor.json) |
-| `UNKNOWN_LAYER` | error | Every layer is in the troupe's catalogue for its slot. | [`bad-unknown-layer`](fixtures/invalid/bad-unknown-layer.json) |
-| `LAYER_MISFIT` | error | Every layer fits the actor wearing it, in the cast and in each beat. | [`bad-layer-misfit`](fixtures/invalid/bad-layer-misfit.json), [`bad-beat-layer-misfit`](fixtures/invalid/bad-beat-layer-misfit.json), [`bad-back-prop-misfit`](fixtures/invalid/bad-back-prop-misfit.json) |
-| `UNKNOWN_CHARACTER` | error | Every beat's character is in the cast. | [`bad-unknown-character`](fixtures/invalid/bad-unknown-character.json) |
-| `BAD_INDEX` | error | Beats are numbered 0, 1, 2 and so on, with no gaps. | [`bad-noncontiguous-index`](fixtures/invalid/bad-noncontiguous-index.json) |
-| `SPEAK_WITHOUT_AUDIO` | error | A speaking beat has a line clip. | [`bad-speak-without-audio`](fixtures/invalid/bad-speak-without-audio.json) |
-| `BAD_AUDIO_REF` | error | Every line and sound effect a beat uses is in the audio list. | [`bad-audio-ref`](fixtures/invalid/bad-audio-ref.json) |
-| `BAD_AUDIO_KIND` | error | A beat's line is a line clip, and its sound effects are sound-effect clips. | [`bad-audio-kind`](fixtures/invalid/bad-audio-kind.json) |
-| `DUPLICATE_AUDIO_ID` | error | No two audio clips share an id. | [`bad-duplicate-audio-id`](fixtures/invalid/bad-duplicate-audio-id.json) |
-| `AUDIO_URI_OUTSIDE_BUNDLE` | error | Every audio path stays inside the story's folder. | [`bad-audio-uri-outside-bundle`](fixtures/invalid/bad-audio-uri-outside-bundle.json) |
-| `SFX_NOT_IN_VOCABULARY` | error | Every sound effect is in the troupe's shared list. | [`bad-sfx-not-in-vocabulary`](fixtures/invalid/bad-sfx-not-in-vocabulary.json) |
-| `SFX_OUT_OF_ORDER` | error | A beat's sound-effect cues are in time order. | [`bad-sfx-out-of-order`](fixtures/invalid/bad-sfx-out-of-order.json) |
-| `SFX_PAST_END` | error | No sound-effect cue starts after its beat ends. | [`bad-sfx-past-end`](fixtures/invalid/bad-sfx-past-end.json) |
-| `UNKNOWN_DEVICE` | error | Every device a beat or the stage names is in the stage's device list. | [`bad-unknown-device`](fixtures/invalid/bad-unknown-device.json) |
-| `AUDIO_FILE_MISSING` | error | Every audio file exists. Checked with `--check-files`. | Tested in [`tests/validator.test.ts`](tests/validator.test.ts) |
-| `AUDIO_DURATION_MISMATCH` | error | Each audio file's length matches the length the file lists. Checked with `--check-files`. | Tested in [`tests/validator.test.ts`](tests/validator.test.ts) |
-| `DURATION_SHORT` | warning | A speaking beat lasts at least as long as its line clip. | Tested in [`tests/validator.test.ts`](tests/validator.test.ts) |
-| `ORPHAN_AUDIO` | warning | Every audio clip is used by some beat. | Tested in [`tests/validator.test.ts`](tests/validator.test.ts) |
+| `SHAPE` | error | The file matches the JSON Schema, [`schema/performance.schema.json`](../schema/performance.schema.json). | [`bad-shape-missing-cast`](../fixtures/invalid/bad-shape-missing-cast.json) |
+| `MISS_MOON_MISSING` | error | Miss Moon is cast as the host. | [`bad-missing-miss-moon`](../fixtures/invalid/bad-missing-miss-moon.json) |
+| `MISS_MOON_MISCAST` | error | Miss Moon plays no story role, and only she plays the host. | [`bad-moon-cast-in-role`](../fixtures/invalid/bad-moon-cast-in-role.json) |
+| `UNKNOWN_ACTOR` | error | Every cast actor is in the troupe. | [`bad-unknown-actor`](../fixtures/invalid/bad-unknown-actor.json) |
+| `DUPLICATE_CHARACTER` | error | No two roles share a character id. | [`bad-duplicate-character`](../fixtures/invalid/bad-duplicate-character.json) |
+| `ACTOR_DOUBLED` | error | No actor plays two roles. | [`bad-actor-doubled`](../fixtures/invalid/bad-actor-doubled.json) |
+| `VOICE_NOT_SIGNATURE` | error | Each role speaks in its actor's own voice. | [`bad-voice-not-actor-signature`](../fixtures/invalid/bad-voice-not-actor-signature.json) |
+| `BAD_EXPRESSION` | error | Every expression, a role's default and each beat's, belongs to that actor. | [`bad-expression-for-actor`](../fixtures/invalid/bad-expression-for-actor.json) |
+| `UNKNOWN_LAYER` | error | Every layer is in the troupe's catalogue for its slot. | [`bad-unknown-layer`](../fixtures/invalid/bad-unknown-layer.json) |
+| `LAYER_MISFIT` | error | Every layer fits the actor wearing it, in the cast and in each beat. | [`bad-layer-misfit`](../fixtures/invalid/bad-layer-misfit.json), [`bad-beat-layer-misfit`](../fixtures/invalid/bad-beat-layer-misfit.json), [`bad-back-prop-misfit`](../fixtures/invalid/bad-back-prop-misfit.json) |
+| `UNKNOWN_CHARACTER` | error | Every beat's character is in the cast. | [`bad-unknown-character`](../fixtures/invalid/bad-unknown-character.json) |
+| `BAD_INDEX` | error | Beats are numbered 0, 1, 2 and so on, with no gaps. | [`bad-noncontiguous-index`](../fixtures/invalid/bad-noncontiguous-index.json) |
+| `SPEAK_WITHOUT_AUDIO` | error | A speaking beat has a line clip. | [`bad-speak-without-audio`](../fixtures/invalid/bad-speak-without-audio.json) |
+| `BAD_AUDIO_REF` | error | Every line and sound effect a beat uses is in the audio list. | [`bad-audio-ref`](../fixtures/invalid/bad-audio-ref.json) |
+| `BAD_AUDIO_KIND` | error | A beat's line is a line clip, and its sound effects are sound-effect clips. | [`bad-audio-kind`](../fixtures/invalid/bad-audio-kind.json) |
+| `DUPLICATE_AUDIO_ID` | error | No two audio clips share an id. | [`bad-duplicate-audio-id`](../fixtures/invalid/bad-duplicate-audio-id.json) |
+| `AUDIO_URI_OUTSIDE_BUNDLE` | error | Every audio path stays inside the story's folder. | [`bad-audio-uri-outside-bundle`](../fixtures/invalid/bad-audio-uri-outside-bundle.json) |
+| `SFX_NOT_IN_VOCABULARY` | error | Every sound effect is in the troupe's shared list. | [`bad-sfx-not-in-vocabulary`](../fixtures/invalid/bad-sfx-not-in-vocabulary.json) |
+| `SFX_OUT_OF_ORDER` | error | A beat's sound-effect cues are in time order. | [`bad-sfx-out-of-order`](../fixtures/invalid/bad-sfx-out-of-order.json) |
+| `SFX_PAST_END` | error | No sound-effect cue starts after its beat ends. | [`bad-sfx-past-end`](../fixtures/invalid/bad-sfx-past-end.json) |
+| `UNKNOWN_DEVICE` | error | Every device a beat or the stage names is in the stage's device list. | [`bad-unknown-device`](../fixtures/invalid/bad-unknown-device.json) |
+| `AUDIO_FILE_MISSING` | error | Every audio file exists. Checked with `--check-files`. | Tested in [`tests/validator.test.ts`](../tests/validator.test.ts) |
+| `AUDIO_DURATION_MISMATCH` | error | Each audio file's length matches the length the file lists. Checked with `--check-files`. | Tested in [`tests/validator.test.ts`](../tests/validator.test.ts) |
+| `DURATION_SHORT` | warning | A speaking beat lasts at least as long as its line clip. | Tested in [`tests/validator.test.ts`](../tests/validator.test.ts) |
+| `ORPHAN_AUDIO` | warning | Every audio clip is used by some beat. | Tested in [`tests/validator.test.ts`](../tests/validator.test.ts) |
 
 ## Exporting a story as video
 
@@ -165,7 +165,7 @@ an uploaded copy, not this file, so upload the new one too (see the next section
 
 ## The examples' videos
 
-[`EXAMPLES.md`](EXAMPLES.md) shows four stories. Each has a video and a short looping GIF of one
+[`examples.md`](examples.md) shows four stories. Each has a video and a short looping GIF of one
 moment, in `docs/media/examples/`:
 
 ```sh
@@ -193,10 +193,10 @@ ffmpeg -ss 11.6 -t 6 -i docs/media/examples/$s.mp4 -loop 0 \
 | Bear | 37.0 | 6 |
 
 After a change to a story, export its video again, cut its GIF again, and check the times in
-`EXAMPLES.md`.
+`examples.md`.
 
 The pages do not play these files. GitHub plays a video inline only from an upload, so
-`EXAMPLES.md` and the README each show a `user-attachments` URL, on its own line. After you export a
+`examples.md` and the README each show a `user-attachments` URL, on its own line. After you export a
 video again, upload it: in the public repository, open a new issue, drag the `.mp4` into the comment
 box, copy the URL GitHub writes there, and close the issue without submitting it. Then replace the
 old URL. Uploads are kept by GitHub, not by this repository.
@@ -283,13 +283,13 @@ story to the end, and exits non-zero on a Lua error. `/resident:validate-app` ca
 built story: its stubs have no troupe art, so the app's art check fails and the run crashes
 before any story code runs. Use `/resident:validate-app` for hand-written Lua apps, such as
 `device/apps/audio-check.lua` or the ones `/resident:create-app` writes. Run it from the repo root, so it finds
-[`DEVICE-SKILL.md`](DEVICE-SKILL.md) there. The Resident plugin's directory is under
+[`DEVICE-SKILL.md`](../DEVICE-SKILL.md) there. The Resident plugin's directory is under
 `~/.claude/plugins/cache/inanimate/resident/`.
 
 ## Changing an actor's art
 
 The firmware holds the troupe art, not the apps (decision 7 in
-[`DESIGN-DECISIONS.md`](DESIGN-DECISIONS.md)). After you change a grid under `sprites/actors/`,
+[`design-decisions.md`](design-decisions.md)). After you change a grid under `sprites/actors/`,
 regenerate the firmware's copy:
 
 ```sh
@@ -328,7 +328,7 @@ followed by `boot: no saved story` on a clean device.
 ## Playing it on the device
 
 Once the StickS3 is flashed with this repo's `device/` firmware (see
-[`DEVICE-SKILL.md`](DEVICE-SKILL.md) for the Lua surface it exposes), stories are delivered
+[`DEVICE-SKILL.md`](../DEVICE-SKILL.md) for the Lua surface it exposes), stories are delivered
 **over the air**, with no USB. From a Claude Code session in this repo, invoke the **push-story**
 skill with the bundle:
 

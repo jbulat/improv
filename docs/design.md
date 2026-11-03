@@ -2,7 +2,7 @@
 
 A canned, cloud-authored story performed on small ESP32 stick devices (Game Boy / Tamagotchi visual register), using Resident for the on-device sandbox and Courier for connectivity. This is a brainstorm-stage design doc, not a spec. The goal is to lock the **data model** and the **big-picture pipeline** so they survive contact with later features (layered roles, sfx, interaction, multi-device) without a rewrite.
 
-Companion files: `improv-troupe.md` (the casting catalog — the six actors + Miss Moon) and `improv-storyboard.md` (a worked story cast two ways).
+Companion files: `troupe.md` (the casting catalog — the six actors + Miss Moon) and `storyboard.md` (a worked story cast two ways).
 
 ## Glossary
 
@@ -70,7 +70,7 @@ The key idea of the troupe model: a **role** ("the dragon") is not an asset. It 
 }
 ```
 
-**Miss Moon is a constant cast member.** Every performance's cast includes the host with the reserved id `miss_moon` (`actor: "miss_moon"`, no layers, her own dedicated voice and extended expression set). The six actors are cast *per story*; Miss Moon is always seated. She is the through-line the child recognises across every story. Full spec in `improv-troupe.md`.
+**Miss Moon is a constant cast member.** Every performance's cast includes the host with the reserved id `miss_moon` (`actor: "miss_moon"`, no layers, her own dedicated voice and extended expression set). The six actors are cast *per story*; Miss Moon is always seated. She is the through-line the child recognises across every story. Full spec in `troupe.md`.
 
 **Casting constraint — one actor, one role.** An actor holds **at most one** role in a story. A story needing more characters of a kind than the troupe has actors is restructured first, and only then are roles merged or cut. Miss Moon sits outside the count, holding her own reserved role and no other. This caps a performance at **six story roles plus the host**. Validate enforces it (`ACTOR_DOUBLED`).
 

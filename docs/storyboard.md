@@ -2,7 +2,7 @@
 
 One story, cast against the troupe twice: **Draft A** (Phase 1 — `base` + `expression` only) and **Draft B** (End goal — full layer stack). The point is to expose where the six-actor troupe strains, so read the annotations, not just the beats.
 
-> **Re-drafted 2026-09-18.** Draft B previously cast `tuk` as both the horse and the dragon, on the *doubling must be legible* rule (lifted 2026-09-01). That lift has been **retracted**: an actor holds at most one role in a story, in every phase, dressed apart or not. See `improv-troupe.md`'s casting rule for the rule and its history.
+> **Re-drafted 2026-09-18.** Draft B previously cast `tuk` as both the horse and the dragon, on the *doubling must be legible* rule (lifted 2026-09-01). That lift has been **retracted**: an actor holds at most one role in a story, in every phase, dressed apart or not. See `troupe.md`'s casting rule for the rule and its history.
 >
 > **Draft B is re-cast below** — the horse becomes a pony played by `pip`, and the story still survives intact. **Draft A is unchanged**: it never doubled, and its beat structure is what `fixtures/knight-and-lonely-dragon` actually ships, so it is a record rather than a draft. What the re-draft *did* expose about Draft A is annotated in place rather than edited into it.
 
@@ -10,7 +10,7 @@ One story, cast against the troupe twice: **Draft A** (Phase 1 — `base` + `exp
 
 **Roles → actors.** Host = `miss_moon` (Miss Moon, the MC) · Knight = `milo` · Princess = `rosa` · Dragon = `tuk` · Pony = `pip` (Draft B only). Four story roles against a troupe of six — **this story never needed doubling**, which is the thing the first draft got wrong.
 
-> **Host:** the framing beats are Miss Moon, the permanent MC — not one of the six actors and never cast in a role. She opens, bridges, and closes. See `improv-troupe.md`.
+> **Host:** the framing beats are Miss Moon, the permanent MC — not one of the six actors and never cast in a role. She opens, bridges, and closes. See `troupe.md`.
 
 ---
 
@@ -79,7 +79,7 @@ Costume, headwear and props make every role read instantly, and the pony rejoins
 
 **Two things this re-draft asks of the art backlog**, named rather than assumed:
 
-1. **`mane` should fit `pip`, not only `tuk`.** `improv-troupe.md`'s v2 starter vocabulary maps `horse → Tuk / mane`, scoping the layer to the large beast. Under one-actor-one-role, a story that has a dragon in it cannot also have a Tuk horse — so `mane` is more useful as an `animal` layer than a Tuk one, and Pip's pointed ears above a mane are exactly the funny-wrong the troupe is for. Not changed in the troupe file here; flagged for whoever authors the layer.
+1. **`mane` should fit `pip`, not only `tuk`.** `troupe.md`'s v2 starter vocabulary maps `horse → Tuk / mane`, scoping the layer to the large beast. Under one-actor-one-role, a story that has a dragon in it cannot also have a Tuk horse — so `mane` is more useful as an `animal` layer than a Tuk one, and Pip's pointed ears above a mane are exactly the funny-wrong the troupe is for. Not changed in the troupe file here; flagged for whoever authors the layer.
 2. **`armor` and `gown` remain unauthored.** The `costume` slot is declared in both schemas and is still empty. Those two are the oldest entries on the layer backlog, and this draft is the reason they matter.
 
 ---
