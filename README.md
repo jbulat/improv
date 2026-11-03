@@ -2,11 +2,11 @@
 
 [![CI](https://github.com/jbulat/improv/actions/workflows/ci.yml/badge.svg)](https://github.com/jbulat/improv/actions/workflows/ci.yml)
 
+Improv is a pocket-sized improv troupe for children's stories. Hand it a story, and the same six pixel-art actors perform it. An AI casts the story and writes the stage directions, and a handheld device puts on the show, with a voice for every character and props and sound effects on cue.
+
 <p align="center">
   <img src="docs/media/meet-the-troupe.gif" width="270" alt="The Improv simulator playing Meet the Improv Troupe: Miss Moon, the host, opens; six pixel-art actors take turns on a small portrait screen, each changing role with a different hat, prop or pair of wings; Miss Moon closes on The End.">
 </p>
-
-Improv is a pocket-sized improv troupe for children's stories. Hand it a story, and the same six pixel-art actors perform it. An AI casts the story and writes the stage directions, and a handheld device puts on the show, with a voice for every character and props and sound effects on cue.
 
 Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are human; Pip and Tuk are animals. Between them they play every role in every story, dressed with props, with Miss Moon narrating. It's made for children of about five to ten, with their parents watching.
 
