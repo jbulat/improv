@@ -1,7 +1,5 @@
 # Improv
 
-[![CI](https://github.com/jbulat/improv/actions/workflows/ci.yml/badge.svg)](https://github.com/jbulat/improv/actions/workflows/ci.yml)
-
 Improv is a pocket-sized improv troupe for children's stories. Hand it a story, and the same six pixel-art actors perform it. An AI casts the story and writes the stage directions, and a handheld device puts on the show, with a voice for every character and props and sound effects on cue.
 
 <p align="center">
@@ -12,7 +10,7 @@ Like a real improv troupe, the cast never changes. Bruno, Milo, Ada and Rosa are
 
 It's a working prototype. Stories play on real hardware, an M5StickS3 (ESP32-S3, 1.14-inch screen), and in a simulator. Claude Code skills do the AI work.
 
-**[Watch four example stories, all created by children →](docs/examples.md)**
+[Watch four example stories, all created by children →](docs/examples.md)
 
 ---
 
@@ -163,7 +161,7 @@ The design and plan steps come from [Superpowers](https://github.com/obra/superp
 - Proven on hardware: an M5StickS3 (ESP32-S3, 1.14-inch screen) plays stories end to end, with pacing, layered sound effects, pause and resume, and restart.
 - Eight stories, including an onboarding story where Miss Moon introduces the troupe.
 - Delivery over the air: two full transfers, of 17 and 19 files, arrived byte-exact with no retries. Corrupted manifests and path-traversal attempts are rejected.
-- A simulator that runs the same Lua file as the device and doubles as a headless test harness, inside a suite of 858 automated tests that includes the firmware's C++.
+- A simulator that runs the same Lua file as the device and doubles as a headless test harness, inside a suite of 858 automated tests that includes the firmware's C++. [![CI](https://github.com/jbulat/improv/actions/workflows/ci.yml/badge.svg)](https://github.com/jbulat/improv/actions/workflows/ci.yml)
 - Not built: the cloud pipeline, for which Claude Code skills and [Kokoro](https://huggingface.co/hexgrad/Kokoro-82M), run locally, stand in.
 
 What the prototype does *not* handle, such as authenticated delivery, is listed plainly in [Workflows](docs/workflows.md#known-limits-of-delivery).
