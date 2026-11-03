@@ -2,7 +2,7 @@
 
 The fixed casting catalog the **Direct** stage casts against. Six recurring actors with persistent identities play every role in every story via expression, costume, and prop — like a small repertory theatre company. The comedy and the consistency both come from the same actor showing up as a knight in one story and a villain in the next.
 
-This is the catalog; `improv-design.md` is the pipeline and data model.
+This is the catalog; `design.md` is the pipeline and data model.
 
 ---
 

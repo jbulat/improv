@@ -159,7 +159,7 @@ function S.draw_art_error()
   screen.flip()
 end
 
--- Layer order per improv-design.md: back_prop, base, costume,
+-- Layer order per docs/design.md: back_prop, base, costume,
 -- expression, headwear, front_prop. Everything but costume is drawn.
 -- `layers` is the role's slot->id table (from the cast), or nil for none.
 function S.draw_character(actor, expression, mouth_open, x, y, layers)

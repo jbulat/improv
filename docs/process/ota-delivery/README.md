@@ -31,7 +31,7 @@ the same paragraph.
 
 A few paragraphs later, the plan also records a reviewer's "Minor" finding that the hardware
 session then confirmed: a failed request blocks the device's main loop. It is still open, and
-is listed in [Known limits of delivery](../../../WORKFLOWS.md#known-limits-of-delivery).
+is listed in [Known limits of delivery](../../workflows.md#known-limits-of-delivery).
 
 ## Reading notes
 

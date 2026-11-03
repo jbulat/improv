@@ -9,9 +9,9 @@ The pipeline is **Author → Direct → Validate → Render → Play**. You span
 
 **There is one clock that matters: the seconds between the child saying their story and seeing it play.** Everything in this file is arranged around that. Nothing waits for approval, nothing tests the story machinery, and nothing that can happen *after* playback happens before it. Assume the mechanics work — they are covered by their own suite, and if they are actually broken that is a `story-create-debug` session, not this one.
 
-Know where the delight comes from, because it sets your priorities as an author (`improv-design.md` → "Where the delight comes from"): **distinct actor voices** first, then **Miss Moon as host**, then **sound effects**, then **mouth-flap**, then **expressions**, then the title card and idle bob. *"Almost none of the delight is in screen resolution. It's in voice, character, sound, and timing."* Write for the ear and the rhythm.
+Know where the delight comes from, because it sets your priorities as an author (`docs/design.md` → "Where the delight comes from"): **distinct actor voices** first, then **Miss Moon as host**, then **sound effects**, then **mouth-flap**, then **expressions**, then the title card and idle bob. *"Almost none of the delight is in screen resolution. It's in voice, character, sound, and timing."* Write for the ear and the rhythm.
 
-> In this prototype these skills *are* the Author and Direct stages. The design moves them to a cloud pipeline (`improv-design.md`), which was never built.
+> In this prototype these skills *are* the Author and Direct stages. The design moves them to a cloud pipeline (`docs/design.md`), which was never built.
 
 ## Where it plays
 
@@ -62,7 +62,7 @@ The seed comes from the child: the setting or premise, and ideally who's in it. 
 
 ## The constraints you cast within
 
-Read `troupe/troupe.json` (the machine truth) and skim `improv-troupe.md` (the casting rules) before drafting — **but after your first question is already out**, never in front of the child while they wait. The digest:
+Read `troupe/troupe.json` (the machine truth) and skim `docs/troupe.md` (the casting rules) before drafting — **but after your first question is already out**, never in front of the child while they wait. The digest:
 
 - **The troupe is fixed**: `bruno` (broad, gruff), `milo` (tall), `ada` (steady, warm), `rosa` (small, bright), `pip` (small critter), `tuk` (big beast). **Miss Moon always hosts and narrates; she is never a story role.** Those descriptions are **soft tiebreak defaults, not typecasting** — any human actor can play any human role, and roles are **not gender-locked** (Ada can be a knight).
 - **Cast for contrast, not resemblance** (casting rules 1 and 2). Co-present characters must differ in silhouette *and* palette; **distinguishability beats accuracy**. Never cast by matching a character's described appearance to an actor's look. And because each actor has one signature voice, casting for contrast casts the *sound* too — a rumbly Tuk beside a squeaky Pip is a directing tool.
@@ -142,9 +142,9 @@ The device draws the actor and their name and nothing else, so the audio carries
 
 ## References
 
-- `improv-troupe.md` → "Casting rules for the director", "Honest limits", "The sfx repertoire", "Layer stack" — read when a story strains the troupe, and when choosing cues.
-- `improv-design.md` → "Where the delight comes from" — the ranked levers behind the choices above.
-- `improv-storyboard.md` — one story cast two ways, with the horse/dragon problem worked through.
+- `docs/troupe.md` → "Casting rules for the director", "Honest limits", "The sfx repertoire", "Layer stack" — read when a story strains the troupe, and when choosing cues.
+- `docs/design.md` → "Where the delight comes from" — the ranked levers behind the choices above.
+- `docs/storyboard.md` — one story cast two ways, with the horse/dragon problem worked through.
 - `schema/performance.schema.json` + `tools/lib/validator.ts` — the contract; every validator error code is fixable at the authoring layer except a missing actor, which is a restructure conversation.
 - `fixtures/meet-the-troupe/` — the worked example of a full-troupe cast, spoken overrides, and late-cue re-anchoring.
 - `.claude/skills/story-create-debug/SKILL.md` — the same story work with the creation-time test pass and review gates.

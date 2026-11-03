@@ -8,7 +8,7 @@ StickS3 plays.
 Each video plays with sound. Under it, a table gives what to watch for, the cast, the
 `performance.json` the device plays, and the command that renders the video.
 
-New to the troupe? [Meet them first](README.md): Miss Moon introduces all six actors in the
+New to the troupe? [Meet them first](../README.md): Miss Moon introduces all six actors in the
 README's opening clip.
 
 ---
@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/51f2729e-b1e7-46dc-886f-c200ebb04fe2
 |---|---|
 | **Watch for** | His roar at 0:13, which comes out as fire; and his very best woof at 0:41, which comes out as fire again. |
 | **Cast** | Wilfred — Tuk, with horns · Princess Mia — Rosa, with a tiara · Bob — Pip |
-| **Performance** | [`performance.json`](fixtures/wilfred-the-friendly-dragon/performance.json) |
+| **Performance** | [`performance.json`](../fixtures/wilfred-the-friendly-dragon/performance.json) |
 | **Video** | `npm run export:video -- --bundle fixtures/wilfred-the-friendly-dragon` |
 
 ---
@@ -48,7 +48,7 @@ https://github.com/user-attachments/assets/d737c8ca-0a01-48fd-aa5e-0339749c182b
 |---|---|
 | **Watch for** | "Higgledy, piggledy... BALD!" at 0:29, and Lulu at 0:34 with her fringe gone. The fringe is a costume layer, so the spell simply takes it off. |
 | **Cast** | Lulu — Ada, with a fringe · The witch — Rosa, with a witch's hat and a wand |
-| **Performance** | [`performance.json`](fixtures/lulu-and-the-fringe-that-grew-back/performance.json) |
+| **Performance** | [`performance.json`](../fixtures/lulu-and-the-fringe-that-grew-back/performance.json) |
 | **Video** | `npm run export:video -- --bundle fixtures/lulu-and-the-fringe-that-grew-back` |
 
 ---
@@ -70,7 +70,7 @@ https://github.com/user-attachments/assets/d656e28f-5b43-4b16-902e-4d7843399a1d
 |---|---|
 | **Watch for** | The shopkeeper at 0:21, and the hiding place at 0:45. |
 | **Cast** | Noodle — Pip · Hattie — Rosa · The shopkeeper — Bruno |
-| **Performance** | [`performance.json`](fixtures/noodle-the-doggie-walks-down-the-street/performance.json) |
+| **Performance** | [`performance.json`](../fixtures/noodle-the-doggie-walks-down-the-street/performance.json) |
 | **Video** | `npm run export:video -- --bundle fixtures/noodle-the-doggie-walks-down-the-street` |
 
 ---
@@ -90,12 +90,12 @@ https://github.com/user-attachments/assets/c71aad47-eb38-44b0-873c-85b360d3e600
 |---|---|
 | **Watch for** | The quiet middle, where Marisol is alone again, and Bear's arrival at 0:37. |
 | **Cast** | Marisol — Rosa · Poppy — Ada · Dad — Milo · Bear — Pip |
-| **Performance** | [`performance.json`](fixtures/a-dog-called-bear/performance.json) |
+| **Performance** | [`performance.json`](../fixtures/a-dog-called-bear/performance.json) |
 | **Video** | `npm run export:video -- --bundle fixtures/a-dog-called-bear` |
 
 ---
 
 ## And the one in the walkthrough
 
-[The Knight and the Lonely Dragon](README.md#one-story-from-page-to-device) is in the README,
+[The Knight and the Lonely Dragon](../README.md#one-story-from-page-to-device) is in the README,
 followed stage by stage from the child's idea to the device.

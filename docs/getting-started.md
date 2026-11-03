@@ -1,7 +1,7 @@
 # Getting started
 
 The shortest path from a fresh clone to watching a story in the simulator, and a map of what's
-where. For every other tool, see [`WORKFLOWS.md`](WORKFLOWS.md).
+where. For every other tool, see [`workflows.md`](workflows.md).
 
 ## What you need
 
@@ -12,13 +12,13 @@ This is built around a specific, deliberately low-cost stack. The device is a **
 
 | Layer | Choice | Role |
 |---|---|---|
-| Device | **M5 StickS3** (ESP32-S3, 8MB PSRAM, 1.14" LCD, IMU, mic/speaker, IR, battery) | Displays sprites, plays audio. Playback only. |
+| Device | **M5StickS3** (ESP32-S3, 8MB PSRAM, 1.14" LCD, IMU, mic/speaker, IR, battery) | Displays sprites, plays audio. Playback only. |
 | On-device runtime | **Resident** (Inanimate) | C++ sandboxed **Lua** runtime with hot-reload over WebSocket. The playback app is Lua, pushed from the cloud. |
 | Connectivity | **Courier** (composed by Resident) | WiFi, WebSocket, MQTT, UDP multicast, self-healing reconnection. |
 | Cloud | Designed, not built | All AI (STT, story LLM, director LLM, TTS) plus the asset pipeline. In this prototype, Claude Code skills and Kokoro, run locally, stand in for it. |
 | Dev workflow | **Claude Code** + the Resident agent plugin | Flash firmware, write the device driver layer, iterate Lua apps via hot reload. |
 
-**Note on Resident:** it's a library you compile into firmware, not a flash-and-go OS. Standing up a new device is a one-time job: bring up the board in PlatformIO, add the sandbox, write C++ drivers that expose the StickS3's hardware (LCD, buttons, audio, buzzer) to Lua, and document that surface in a `DEVICE-SKILL.md`. That's done now: this repo owns a `device/` PlatformIO project and a repo-root [`DEVICE-SKILL.md`](DEVICE-SKILL.md). Standing up the driver layer happened on Resident, in this repo, not by depending on the upstream demo. After that, the fast loop is pushing Lua apps over the air.
+**Note on Resident:** it's a library you compile into firmware, not a flash-and-go OS. Standing up a new device is a one-time job: bring up the board in PlatformIO, add the sandbox, write C++ drivers that expose the StickS3's hardware (LCD, buttons, audio, buzzer) to Lua, and document that surface in a `DEVICE-SKILL.md`. That's done now: this repo owns a `device/` PlatformIO project and a repo-root [`DEVICE-SKILL.md`](../DEVICE-SKILL.md). Standing up the driver layer happened on Resident, in this repo, not by depending on the upstream demo. After that, the fast loop is pushing Lua apps over the air.
 
 ## Install
 
@@ -43,7 +43,7 @@ Other tasks need more:
 | Run the tests (`npm test`) | A C++ compiler on PATH (`c++`), for the firmware's host tests, and a git clone rather than a downloaded archive. Run them as a normal user: two tests fail as root, which ignores the file permissions they check. |
 | Export a video (`npm run export:video`) | ffmpeg. |
 | Render new voice lines (`npm run gen:audio`) | Kokoro, `python3`, `curl` and ffmpeg. See [Voices](#voices). |
-| Build and flash the firmware | PlatformIO and an M5 StickS3. See [Setting up the device](WORKFLOWS.md#setting-up-the-device). |
+| Build and flash the firmware | PlatformIO and an M5StickS3. See [Setting up the device](workflows.md#setting-up-the-device). |
 
 The TypeScript-only tools (`validate`, `preview:art`, `preview:audio`, `export:story`) need only
 Node.
@@ -74,7 +74,7 @@ only.
 npm run sim -- --bundle fixtures/knight-and-lonely-dragon
 ```
 
-It prints a `http://127.0.0.1:<port>` URL to open. Browser audio needs one click to start, so press a button on the simulated device if the first beat is silent. [`WORKFLOWS.md`](WORKFLOWS.md#playing-it-in-the-simulator) explains the panel and its flags.
+It prints a `http://127.0.0.1:<port>` URL to open. Browser audio needs one click to start, so press a button on the simulated device if the first beat is silent. [`workflows.md`](workflows.md#playing-it-in-the-simulator) explains the panel and its flags.
 
 ## Tests and CI
 
@@ -92,7 +92,7 @@ npm run build:viewer                        # bundle the sprite viewer (art revi
 npm run sim -- --entry viewer               # browse that art, actor by actor
 ```
 
-[`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs on every pull request and every push to `main`. It has two jobs:
+[`.github/workflows/ci.yml`](../.github/workflows/ci.yml) runs on every pull request and every push to `main`. It has two jobs:
 
 - **Typecheck, test and build.** Installs Lua and ffmpeg, checks the C++ formatting with clang-format 19.1.7, runs `npm run all` (typecheck, ESLint, the Prettier check, the full test suite, the viewer build), then rebuilds every story app and fails if a committed build file is out of date.
 - **Build the StickS3 firmware.** `pio run -d device`, with the PlatformIO toolchain cached between runs. It runs only when the repository variable `FIRMWARE_CI` is `true`; otherwise it is skipped.
@@ -127,4 +127,4 @@ The contract and its tooling are real:
 | `.claude/skills/push-story/` | Delivers a story to the StickS3 over the air: serves its audio on the LAN, announces it over the relay, waits for the device to verify every file, then pushes the app |
 | `tests/` | The test suite (`npm test`): the validator, the build, the Lua runtime played headlessly, the simulator, and the firmware's host-testable C++ |
 
-Everything else, from art previews to delivering a story to the device, is in [`WORKFLOWS.md`](WORKFLOWS.md).
+Everything else, from art previews to delivering a story to the device, is in [`workflows.md`](workflows.md).

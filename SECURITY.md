@@ -12,4 +12,4 @@ vulnerability**. Please do not open a public issue for it.
 
 Some gaps are known and written down, so they need no report. Two examples: the device accepts a
 story or an app from anyone who knows its id, and its Wi-Fi setup network is open. The full list
-is in [Known limits of delivery](WORKFLOWS.md#known-limits-of-delivery).
+is in [Known limits of delivery](docs/workflows.md#known-limits-of-delivery).

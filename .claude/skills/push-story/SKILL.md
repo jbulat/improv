@@ -213,7 +213,7 @@ document on arrival, so a large app can be dropped device-side after a clean pus
 
 Observed on hardware, historically: a 50,035-byte app pushed and ran; a 68,748-byte one was
 dropped. That ceiling is history now — apps no longer carry actor art (it moved resident into
-firmware; see decision 7 in `DESIGN-DECISIONS.md`) and build to
+firmware; see decision 7 in `docs/design-decisions.md`) and build to
 ~17 KB, well clear of the old free-heap-dependent limit. An app anywhere near the old ~64 KB
 range was built with stale tooling, not a heap problem — rebuild it with a current
 `npm run build:app -- --bundle <bundle>` rather than chasing free heap. The
